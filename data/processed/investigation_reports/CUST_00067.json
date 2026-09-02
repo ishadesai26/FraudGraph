@@ -1,0 +1,288 @@
+{
+  "entity_id": "CUST_00067",
+  "entity_type": "customer",
+  "risk_score": 70.16,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_026",
+  "member_role": "MEMBER",
+  "total_transactions": 14,
+  "total_spend": 457305.85,
+  "evidence": [
+    {
+      "source": "BEHAVIORAL_MODEL",
+      "signal": "behavioral_anomaly_score",
+      "severity": "HIGH",
+      "description": "Unsupervised IsolationForest flagged multi-dimensional behavioral deviation (Score: 100.0/100)."
+    }
+  ],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00067",
+    "ring_id": "FR_026",
+    "member_role": "MEMBER",
+    "network_risk_score": 85.0,
+    "degree": 41,
+    "pagerank": 0.000971,
+    "betweenness_centrality": 0.001588,
+    "clustering_coefficient": 0.2744,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00710",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00622",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01549",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00739",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01699",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01258",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00270",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00579",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 47.81,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 85.0,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 100.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_01040",
+      "timestamp": "2026-01-07T06:02:36",
+      "amount": 4272.72,
+      "merchant_id": "MERCH_0086",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00723",
+      "city": "Pune",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01368",
+      "timestamp": "2026-01-09T06:42:31",
+      "amount": 1500.0,
+      "merchant_id": "MERCH_0051",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00314",
+      "city": "Pune",
+      "seconds_since_previous": 175195.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01432",
+      "timestamp": "2026-01-09T13:02:50",
+      "amount": 341.95,
+      "merchant_id": "MERCH_0042",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00723",
+      "city": "Pune",
+      "seconds_since_previous": 22819.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01719",
+      "timestamp": "2026-01-11T09:19:12",
+      "amount": 11950.22,
+      "merchant_id": "MERCH_0052",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00314",
+      "city": "Pune",
+      "seconds_since_previous": 159382.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02919",
+      "timestamp": "2026-01-18T16:28:05",
+      "amount": 54820.03,
+      "merchant_id": "MERCH_0086",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00314",
+      "city": "Pune",
+      "seconds_since_previous": 630533.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_04839",
+      "timestamp": "2026-01-30T15:44:44",
+      "amount": 56.83,
+      "merchant_id": "MERCH_0032",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00314",
+      "city": "Pune",
+      "seconds_since_previous": 1034199.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07411",
+      "timestamp": "2026-02-15T00:58:04",
+      "amount": 27869.22,
+      "merchant_id": "MERCH_0045",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00120",
+      "city": "Pune",
+      "seconds_since_previous": 1329200.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_07851",
+      "timestamp": "2026-02-17T10:24:59",
+      "amount": 130.77,
+      "merchant_id": "MERCH_0042",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00723",
+      "city": "Pune",
+      "seconds_since_previous": 206815.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08452",
+      "timestamp": "2026-02-20T15:36:36",
+      "amount": 77141.73,
+      "merchant_id": "MERCH_0045",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00120",
+      "city": "Pune",
+      "seconds_since_previous": 277897.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_08603",
+      "timestamp": "2026-02-21T13:04:45",
+      "amount": 79452.26,
+      "merchant_id": "MERCH_0046",
+      "payment_type": "UPI",
+      "device_id": "DEV_0095",
+      "ip_id": "IP_00120",
+      "city": "Pune",
+      "seconds_since_previous": 77289.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_08766",
+      "timestamp": "2026-02-22T12:40:16",
+      "amount": 52632.22,
+      "merchant_id": "MERCH_0046",
+      "payment_type": "UPI",
+      "device_id": "DEV_0095",
+      "ip_id": "IP_00120",
+      "city": "Pune",
+      "seconds_since_previous": 84931.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_08986",
+      "timestamp": "2026-02-23T17:49:52",
+      "amount": 46152.53,
+      "merchant_id": "MERCH_0045",
+      "payment_type": "UPI",
+      "device_id": "DEV_0095",
+      "ip_id": "IP_00120",
+      "city": "Pune",
+      "seconds_since_previous": 104976.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_09644",
+      "timestamp": "2026-02-27T15:56:57",
+      "amount": 64120.1,
+      "merchant_id": "MERCH_0045",
+      "payment_type": "UPI",
+      "device_id": "DEV_0095",
+      "ip_id": "IP_00120",
+      "city": "Pune",
+      "seconds_since_previous": 338825.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_09814",
+      "timestamp": "2026-02-28T18:15:02",
+      "amount": 36865.27,
+      "merchant_id": "MERCH_0046",
+      "payment_type": "UPI",
+      "device_id": "DEV_0184",
+      "ip_id": "IP_00120",
+      "city": "Pune",
+      "seconds_since_previous": 94685.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_026'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00067`\n**Composite Risk Score**: `70.2 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_026` (MEMBER)\n**Transactional History**: 14 transactions (\u20b9457,305.85)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Unsupervised IsolationForest flagged multi-dimensional behavioral deviation (Score: 100.0/100).\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_026'.\n============================================================"
+}

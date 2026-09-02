@@ -1,0 +1,201 @@
+{
+  "entity_id": "CUST_00688",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_018",
+  "member_role": "MEMBER",
+  "total_transactions": 7,
+  "total_spend": 81215.13,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "shared_proxy_infrastructure",
+      "severity": "HIGH",
+      "description": "Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts."
+    }
+  ],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b9276.86",
+      "baseline": "Customer Avg: \u20b9276.86",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b9276.86 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_00688",
+    "ring_id": "FR_018",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.97,
+    "degree": 35,
+    "pagerank": 0.000715,
+    "betweenness_centrality": 0.002842,
+    "clustering_coefficient": 0.1798,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01520",
+        "relational_weight": 8.0
+      },
+      {
+        "customer_id": "CUST_01728",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01359",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00102",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00888",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01944",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00607",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00292",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "shared_proxy_infrastructure",
+        "severity": "HIGH",
+        "count": 4,
+        "description": "Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.97,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00816",
+      "timestamp": "2026-01-06T02:37:16",
+      "amount": 115.92,
+      "merchant_id": "MERCH_0097",
+      "payment_type": "UPI",
+      "device_id": "DEV_0323",
+      "ip_id": "IP_00950",
+      "city": "Chennai",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_00968",
+      "timestamp": "2026-01-06T16:41:43",
+      "amount": 8802.79,
+      "merchant_id": "MERCH_0041",
+      "payment_type": "UPI",
+      "device_id": "DEV_0384",
+      "ip_id": "IP_00776",
+      "city": "Chennai",
+      "seconds_since_previous": 50667.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01107",
+      "timestamp": "2026-01-07T13:51:20",
+      "amount": 526.77,
+      "merchant_id": "MERCH_0007",
+      "payment_type": "UPI",
+      "device_id": "DEV_0384",
+      "ip_id": "IP_00776",
+      "city": "Chennai",
+      "seconds_since_previous": 76177.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01400",
+      "timestamp": "2026-01-09T10:09:05",
+      "amount": 64566.33,
+      "merchant_id": "MERCH_0054",
+      "payment_type": "UPI",
+      "device_id": "DEV_0323",
+      "ip_id": "IP_00776",
+      "city": "Chennai",
+      "seconds_since_previous": 159465.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_04325",
+      "timestamp": "2026-01-27T10:24:41",
+      "amount": 212.25,
+      "merchant_id": "MERCH_0089",
+      "payment_type": "UPI",
+      "device_id": "DEV_0167",
+      "ip_id": "IP_00950",
+      "city": "Chennai",
+      "seconds_since_previous": 1556136.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07327",
+      "timestamp": "2026-02-14T12:05:59",
+      "amount": 6714.21,
+      "merchant_id": "MERCH_0088",
+      "payment_type": "UPI",
+      "device_id": "DEV_0323",
+      "ip_id": "IP_00020",
+      "city": "Chennai",
+      "seconds_since_previous": 1561278.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09084",
+      "timestamp": "2026-02-24T10:24:45",
+      "amount": 276.86,
+      "merchant_id": "MERCH_0088",
+      "payment_type": "UPI",
+      "device_id": "DEV_0323",
+      "ip_id": "IP_00950",
+      "city": "Chennai",
+      "seconds_since_previous": 857926.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_018'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00688`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_018` (MEMBER)\n**Transactional History**: 7 transactions (\u20b981,215.13)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b9276.86 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_018'.\n============================================================"
+}

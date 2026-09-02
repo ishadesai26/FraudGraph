@@ -1,0 +1,139 @@
+{
+  "entity_id": "CUST_00732",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_015",
+  "member_role": "MEMBER",
+  "total_transactions": 2,
+  "total_spend": 131551.71,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "shared_proxy_infrastructure",
+      "severity": "HIGH",
+      "description": "Customer shares 5 Datacenter/VPN proxy IP addresses with other transacting accounts."
+    },
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "merchant_spend_concentration",
+      "severity": "MEDIUM",
+      "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.50)."
+    }
+  ],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00732",
+    "ring_id": "FR_015",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.95,
+    "degree": 15,
+    "pagerank": 0.000358,
+    "betweenness_centrality": 0.0,
+    "clustering_coefficient": 0.3714,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00492",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00912",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00208",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00364",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00386",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01098",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01462",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01255",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "shared_proxy_infrastructure",
+        "severity": "HIGH",
+        "count": 5,
+        "description": "Customer shares 5 Datacenter/VPN proxy IP addresses with other transacting accounts."
+      },
+      {
+        "signal": "merchant_spend_concentration",
+        "severity": "MEDIUM",
+        "value": "HHI: 0.50",
+        "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.50)."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.95,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_04400",
+      "timestamp": "2026-01-28T02:03:47",
+      "amount": 57922.94,
+      "merchant_id": "MERCH_0016",
+      "payment_type": "UPI",
+      "device_id": "DEV_0237",
+      "ip_id": "IP_00777",
+      "city": "Hyderabad",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_09105",
+      "timestamp": "2026-02-24T12:08:45",
+      "amount": 73628.77,
+      "merchant_id": "MERCH_0029",
+      "payment_type": "UPI",
+      "device_id": "DEV_0237",
+      "ip_id": "IP_00777",
+      "city": "Hyderabad",
+      "seconds_since_previous": 2369098.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_015'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00732`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_015` (MEMBER)\n**Transactional History**: 2 transactions (\u20b9131,551.71)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Customer shares 5 Datacenter/VPN proxy IP addresses with other transacting accounts.\n2. [MEDIUM] Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.50).\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_015'.\n============================================================"
+}

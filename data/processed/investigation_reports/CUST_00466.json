@@ -1,0 +1,159 @@
+{
+  "entity_id": "CUST_00466",
+  "entity_type": "customer",
+  "risk_score": 62.5,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_017",
+  "member_role": "MEMBER",
+  "total_transactions": 3,
+  "total_spend": 6380.12,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "shared_proxy_infrastructure",
+      "severity": "HIGH",
+      "description": "Customer shares 5 Datacenter/VPN proxy IP addresses with other transacting accounts."
+    },
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "merchant_spend_concentration",
+      "severity": "MEDIUM",
+      "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.56)."
+    }
+  ],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b91,087.65",
+      "baseline": "Customer Avg: \u20b91,087.65",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b91,087.65 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_00466",
+    "ring_id": "FR_017",
+    "member_role": "MEMBER",
+    "network_risk_score": 100.0,
+    "degree": 25,
+    "pagerank": 0.000539,
+    "betweenness_centrality": 0.0003,
+    "clustering_coefficient": 0.2233,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01742",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01371",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00235",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01409",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01584",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00324",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00720",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00636",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "shared_proxy_infrastructure",
+        "severity": "HIGH",
+        "count": 5,
+        "description": "Customer shares 5 Datacenter/VPN proxy IP addresses with other transacting accounts."
+      },
+      {
+        "signal": "merchant_spend_concentration",
+        "severity": "MEDIUM",
+        "value": "HHI: 0.56",
+        "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.56)."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 100.0,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_01908",
+      "timestamp": "2026-01-12T14:55:12",
+      "amount": 4861.46,
+      "merchant_id": "MERCH_0083",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0173",
+      "ip_id": "IP_00051",
+      "city": "Ahmedabad",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02418",
+      "timestamp": "2026-01-15T17:18:53",
+      "amount": 431.01,
+      "merchant_id": "MERCH_0083",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0336",
+      "ip_id": "IP_00051",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 267821.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06636",
+      "timestamp": "2026-02-10T09:17:23",
+      "amount": 1087.65,
+      "merchant_id": "MERCH_0032",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0173",
+      "ip_id": "IP_00318",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 2217510.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_017'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00466`\n**Composite Risk Score**: `62.5 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_017` (MEMBER)\n**Transactional History**: 3 transactions (\u20b96,380.12)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Customer shares 5 Datacenter/VPN proxy IP addresses with other transacting accounts.\n2. [MEDIUM] Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.56).\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b91,087.65 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_017'.\n============================================================"
+}

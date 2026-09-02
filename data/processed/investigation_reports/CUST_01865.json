@@ -1,0 +1,200 @@
+{
+  "entity_id": "CUST_01865",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_018",
+  "member_role": "MEMBER",
+  "total_transactions": 8,
+  "total_spend": 94938.83,
+  "evidence": [],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b995.96",
+      "baseline": "Customer Avg: \u20b995.96",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b995.96 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_01865",
+    "ring_id": "FR_018",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.97,
+    "degree": 27,
+    "pagerank": 0.000653,
+    "betweenness_centrality": 0.000419,
+    "clustering_coefficient": 0.1852,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01635",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00387",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01968",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00159",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00758",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00160",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00438",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01041",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.97,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00292",
+      "timestamp": "2026-01-02T13:53:02",
+      "amount": 476.74,
+      "merchant_id": "MERCH_0060",
+      "payment_type": "UPI",
+      "device_id": "DEV_0185",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_00832",
+      "timestamp": "2026-01-06T04:20:40",
+      "amount": 85019.73,
+      "merchant_id": "MERCH_0026",
+      "payment_type": "UPI",
+      "device_id": "DEV_0185",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": 311258.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_03080",
+      "timestamp": "2026-01-19T14:41:22",
+      "amount": 7798.77,
+      "merchant_id": "MERCH_0060",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0185",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": 1160442.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03736",
+      "timestamp": "2026-01-23T17:57:47",
+      "amount": 991.58,
+      "merchant_id": "MERCH_0060",
+      "payment_type": "UPI",
+      "device_id": "DEV_0185",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": 357385.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05669",
+      "timestamp": "2026-02-04T12:01:08",
+      "amount": 156.93,
+      "merchant_id": "MERCH_0060",
+      "payment_type": "UPI",
+      "device_id": "DEV_0185",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": 1015401.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05977",
+      "timestamp": "2026-02-06T11:33:15",
+      "amount": 205.02,
+      "merchant_id": "MERCH_0026",
+      "payment_type": "UPI",
+      "device_id": "DEV_0185",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": 171127.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06201",
+      "timestamp": "2026-02-07T14:37:32",
+      "amount": 194.1,
+      "merchant_id": "MERCH_0035",
+      "payment_type": "UPI",
+      "device_id": "DEV_0399",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": 97457.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09616",
+      "timestamp": "2026-02-27T11:54:43",
+      "amount": 95.96,
+      "merchant_id": "MERCH_0009",
+      "payment_type": "UPI",
+      "device_id": "DEV_0185",
+      "ip_id": "IP_00891",
+      "city": "Bengaluru",
+      "seconds_since_previous": 1718231.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_018'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01865`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_018` (MEMBER)\n**Transactional History**: 8 transactions (\u20b994,938.83)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b995.96 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_018'.\n============================================================"
+}

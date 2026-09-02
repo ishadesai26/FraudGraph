@@ -1,0 +1,163 @@
+{
+  "entity_id": "CUST_01889",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_018",
+  "member_role": "MEMBER",
+  "total_transactions": 6,
+  "total_spend": 94390.61,
+  "evidence": [],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_01889",
+    "ring_id": "FR_018",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.97,
+    "degree": 9,
+    "pagerank": 0.000314,
+    "betweenness_centrality": 0.0,
+    "clustering_coefficient": 0.5,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01070",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01341",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00725",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00378",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01112",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01541",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01773",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01737",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.97,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00258",
+      "timestamp": "2026-01-02T10:17:36",
+      "amount": 135.97,
+      "merchant_id": "MERCH_0091",
+      "payment_type": "UPI",
+      "device_id": "DEV_0017",
+      "ip_id": "IP_00932",
+      "city": "Pune",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01370",
+      "timestamp": "2026-01-09T06:51:59",
+      "amount": 13703.33,
+      "merchant_id": "MERCH_0012",
+      "payment_type": "UPI",
+      "device_id": "DEV_0017",
+      "ip_id": "IP_00932",
+      "city": "Pune",
+      "seconds_since_previous": 592463.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_04745",
+      "timestamp": "2026-01-30T05:16:50",
+      "amount": 566.87,
+      "merchant_id": "MERCH_0050",
+      "payment_type": "UPI",
+      "device_id": "DEV_0017",
+      "ip_id": "IP_00932",
+      "city": "Pune",
+      "seconds_since_previous": 1808691.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07853",
+      "timestamp": "2026-02-17T10:34:23",
+      "amount": 5310.37,
+      "merchant_id": "MERCH_0091",
+      "payment_type": "UPI",
+      "device_id": "DEV_0017",
+      "ip_id": "IP_00932",
+      "city": "Pune",
+      "seconds_since_previous": 1574253.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08805",
+      "timestamp": "2026-02-22T19:33:25",
+      "amount": 63.85,
+      "merchant_id": "MERCH_0068",
+      "payment_type": "UPI",
+      "device_id": "DEV_0017",
+      "ip_id": "IP_00932",
+      "city": "Pune",
+      "seconds_since_previous": 464342.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09445",
+      "timestamp": "2026-02-26T11:08:47",
+      "amount": 74610.22,
+      "merchant_id": "MERCH_0028",
+      "payment_type": "UPI",
+      "device_id": "DEV_0017",
+      "ip_id": "IP_00932",
+      "city": "Pune",
+      "seconds_since_previous": 315322.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_018'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01889`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_018` (MEMBER)\n**Transactional History**: 6 transactions (\u20b994,390.61)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_018'.\n============================================================"
+}

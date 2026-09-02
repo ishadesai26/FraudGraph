@@ -1,0 +1,200 @@
+{
+  "entity_id": "CUST_01004",
+  "entity_type": "customer",
+  "risk_score": 61.72,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_005",
+  "member_role": "MEMBER",
+  "total_transactions": 8,
+  "total_spend": 101750.26,
+  "evidence": [],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b914,869.87",
+      "baseline": "Customer Avg: \u20b914,869.87",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b914,869.87 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_01004",
+    "ring_id": "FR_005",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.88,
+    "degree": 41,
+    "pagerank": 0.000718,
+    "betweenness_centrality": 0.012814,
+    "clustering_coefficient": 0.111,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00202",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00121",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00972",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01920",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01289",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01420",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00774",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01510",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.88,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_01662",
+      "timestamp": "2026-01-11T03:48:00",
+      "amount": 185.27,
+      "merchant_id": "MERCH_0077",
+      "payment_type": "UPI",
+      "device_id": "DEV_0145",
+      "ip_id": "IP_00482",
+      "city": "Kolkata",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01983",
+      "timestamp": "2026-01-13T05:57:23",
+      "amount": 225.5,
+      "merchant_id": "MERCH_0056",
+      "payment_type": "UPI",
+      "device_id": "DEV_0289",
+      "ip_id": "IP_00689",
+      "city": "Kolkata",
+      "seconds_since_previous": 180563.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03908",
+      "timestamp": "2026-01-25T01:07:12",
+      "amount": 371.5,
+      "merchant_id": "MERCH_0077",
+      "payment_type": "UPI",
+      "device_id": "DEV_0289",
+      "ip_id": "IP_00413",
+      "city": "Kolkata",
+      "seconds_since_previous": 1019389.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_04956",
+      "timestamp": "2026-01-31T09:26:58",
+      "amount": 78102.01,
+      "merchant_id": "MERCH_0064",
+      "payment_type": "UPI",
+      "device_id": "DEV_0048",
+      "ip_id": "IP_00559",
+      "city": "Kolkata",
+      "seconds_since_previous": 548386.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_05126",
+      "timestamp": "2026-02-01T08:03:34",
+      "amount": 1071.38,
+      "merchant_id": "MERCH_0077",
+      "payment_type": "UPI",
+      "device_id": "DEV_0145",
+      "ip_id": "IP_00559",
+      "city": "Kolkata",
+      "seconds_since_previous": 81396.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06938",
+      "timestamp": "2026-02-12T05:08:12",
+      "amount": 363.61,
+      "merchant_id": "MERCH_0056",
+      "payment_type": "UPI",
+      "device_id": "DEV_0145",
+      "ip_id": "IP_00559",
+      "city": "Kolkata",
+      "seconds_since_previous": 939878.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08579",
+      "timestamp": "2026-02-21T10:44:15",
+      "amount": 6561.12,
+      "merchant_id": "MERCH_0077",
+      "payment_type": "UPI",
+      "device_id": "DEV_0145",
+      "ip_id": "IP_00559",
+      "city": "Kolkata",
+      "seconds_since_previous": 797763.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09778",
+      "timestamp": "2026-02-28T13:20:04",
+      "amount": 14869.87,
+      "merchant_id": "MERCH_0064",
+      "payment_type": "UPI",
+      "device_id": "DEV_0289",
+      "ip_id": "IP_00559",
+      "city": "Kolkata",
+      "seconds_since_previous": 614149.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_005'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01004`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_005` (MEMBER)\n**Transactional History**: 8 transactions (\u20b9101,750.26)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b914,869.87 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_005'.\n============================================================"
+}

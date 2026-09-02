@@ -1,0 +1,313 @@
+{
+  "entity_id": "CUST_00054",
+  "entity_type": "customer",
+  "risk_score": 93.97,
+  "risk_level": "CRITICAL",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_004",
+  "member_role": "MEMBER",
+  "total_transactions": 16,
+  "total_spend": 293129.69,
+  "evidence": [
+    {
+      "source": "BEHAVIORAL_MODEL",
+      "signal": "supervised_model_risk",
+      "severity": "CRITICAL",
+      "description": "Supervised RandomForest fraud classifier estimated a 95.4% fraud probability."
+    },
+    {
+      "source": "BEHAVIORAL_MODEL",
+      "signal": "behavioral_anomaly_score",
+      "severity": "HIGH",
+      "description": "Unsupervised IsolationForest flagged multi-dimensional behavioral deviation (Score: 100.0/100)."
+    }
+  ],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00054",
+    "ring_id": "FR_004",
+    "member_role": "MEMBER",
+    "network_risk_score": 85.0,
+    "degree": 34,
+    "pagerank": 0.000689,
+    "betweenness_centrality": 0.003593,
+    "clustering_coefficient": 0.2193,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01208",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01675",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01682",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01272",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01642",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01019",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00233",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01890",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 95.43,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 85.0,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 100.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00662",
+      "timestamp": "2026-01-05T02:31:25",
+      "amount": 12666.01,
+      "merchant_id": "MERCH_0061",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Pune",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_00851",
+      "timestamp": "2026-01-06T05:34:29",
+      "amount": 135.19,
+      "merchant_id": "MERCH_0048",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Pune",
+      "seconds_since_previous": 97384.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02774",
+      "timestamp": "2026-01-17T23:05:24",
+      "amount": 815.67,
+      "merchant_id": "MERCH_0094",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Pune",
+      "seconds_since_previous": 1013455.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03394",
+      "timestamp": "2026-01-21T14:36:45",
+      "amount": 745.14,
+      "merchant_id": "MERCH_0048",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Pune",
+      "seconds_since_previous": 315081.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03869",
+      "timestamp": "2026-01-24T13:41:27",
+      "amount": 370.14,
+      "merchant_id": "MERCH_0002",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Pune",
+      "seconds_since_previous": 255882.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03983",
+      "timestamp": "2026-01-25T09:25:00",
+      "amount": 12704.23,
+      "merchant_id": "MERCH_0087",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 71013.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_04449",
+      "timestamp": "2026-01-28T08:21:09",
+      "amount": 13568.71,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 255369.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06397",
+      "timestamp": "2026-02-08T18:30:27",
+      "amount": 8650.45,
+      "merchant_id": "MERCH_0022",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Delhi",
+      "seconds_since_previous": 986958.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07042",
+      "timestamp": "2026-02-12T17:07:49",
+      "amount": 25844.34,
+      "merchant_id": "MERCH_0028",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Chennai",
+      "seconds_since_previous": 340642.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_07060",
+      "timestamp": "2026-02-13T01:40:56",
+      "amount": 55422.63,
+      "merchant_id": "MERCH_0079",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00749",
+      "city": "Pune",
+      "seconds_since_previous": 30787.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_07576",
+      "timestamp": "2026-02-15T17:25:11",
+      "amount": 16617.26,
+      "merchant_id": "MERCH_0041",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Surat",
+      "seconds_since_previous": 229455.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08564",
+      "timestamp": "2026-02-21T08:49:24",
+      "amount": 23622.72,
+      "merchant_id": "MERCH_0037",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Kolkata",
+      "seconds_since_previous": 487453.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08777",
+      "timestamp": "2026-02-22T13:29:43",
+      "amount": 65767.99,
+      "merchant_id": "MERCH_0064",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Pune",
+      "seconds_since_previous": 103219.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_08993",
+      "timestamp": "2026-02-23T22:59:14",
+      "amount": 14264.6,
+      "merchant_id": "MERCH_0023",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Delhi",
+      "seconds_since_previous": 120571.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09401",
+      "timestamp": "2026-02-26T06:55:45",
+      "amount": 26856.84,
+      "merchant_id": "MERCH_0028",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Chennai",
+      "seconds_since_previous": 201391.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_09670",
+      "timestamp": "2026-02-28T02:23:19",
+      "amount": 15077.77,
+      "merchant_id": "MERCH_0078",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0469",
+      "ip_id": "IP_00948",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 156454.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_004'.",
+    "Initiate mandatory step-up identity verification challenge prior to fund release."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00054`\n**Composite Risk Score**: `94.0 / 100` (CRITICAL)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_004` (MEMBER)\n**Transactional History**: 16 transactions (\u20b9293,129.69)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [CRITICAL] Supervised RandomForest fraud classifier estimated a 95.4% fraud probability.\n2. [HIGH] Unsupervised IsolationForest flagged multi-dimensional behavioral deviation (Score: 100.0/100).\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_004'.\n2. Initiate mandatory step-up identity verification challenge prior to fund release.\n============================================================"
+}

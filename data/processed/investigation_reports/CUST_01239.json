@@ -1,0 +1,147 @@
+{
+  "entity_id": "CUST_01239",
+  "entity_type": "customer",
+  "risk_score": 61.73,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_016",
+  "member_role": "MEMBER",
+  "total_transactions": 3,
+  "total_spend": 16003.9,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "shared_proxy_infrastructure",
+      "severity": "HIGH",
+      "description": "Customer shares 8 Datacenter/VPN proxy IP addresses with other transacting accounts."
+    }
+  ],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b97,437.59",
+      "baseline": "Customer Avg: \u20b97,437.59",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b97,437.59 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_01239",
+    "ring_id": "FR_016",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.9,
+    "degree": 33,
+    "pagerank": 0.000735,
+    "betweenness_centrality": 3.5e-05,
+    "clustering_coefficient": 0.2311,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00363",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00913",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00881",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01181",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01984",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01489",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00373",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01253",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "shared_proxy_infrastructure",
+        "severity": "HIGH",
+        "count": 8,
+        "description": "Customer shares 8 Datacenter/VPN proxy IP addresses with other transacting accounts."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.9,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00183",
+      "timestamp": "2026-01-02T03:03:13",
+      "amount": 699.48,
+      "merchant_id": "MERCH_0049",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0109",
+      "ip_id": "IP_00292",
+      "city": "Jaipur",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05188",
+      "timestamp": "2026-02-01T14:21:26",
+      "amount": 7866.83,
+      "merchant_id": "MERCH_0056",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0109",
+      "ip_id": "IP_00292",
+      "city": "Jaipur",
+      "seconds_since_previous": 2632693.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06586",
+      "timestamp": "2026-02-10T03:34:51",
+      "amount": 7437.59,
+      "merchant_id": "MERCH_0069",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0109",
+      "ip_id": "IP_00292",
+      "city": "Jaipur",
+      "seconds_since_previous": 738805.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_016'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01239`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_016` (MEMBER)\n**Transactional History**: 3 transactions (\u20b916,003.90)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Customer shares 8 Datacenter/VPN proxy IP addresses with other transacting accounts.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b97,437.59 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_016'.\n============================================================"
+}

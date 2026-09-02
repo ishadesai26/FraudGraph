@@ -1,0 +1,122 @@
+{
+  "entity_id": "CUST_00078",
+  "entity_type": "customer",
+  "risk_score": 61.73,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_016",
+  "member_role": "MEMBER",
+  "total_transactions": 3,
+  "total_spend": 29264.38,
+  "evidence": [],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00078",
+    "ring_id": "FR_016",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.9,
+    "degree": 18,
+    "pagerank": 0.000367,
+    "betweenness_centrality": 0.000899,
+    "clustering_coefficient": 0.2484,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01498",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01123",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00365",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00072",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00746",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00337",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01941",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01875",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.9,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00513",
+      "timestamp": "2026-01-04T03:09:42",
+      "amount": 9969.91,
+      "merchant_id": "MERCH_0034",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0495",
+      "ip_id": "IP_00447",
+      "city": "Jaipur",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05284",
+      "timestamp": "2026-02-02T06:31:57",
+      "amount": 204.63,
+      "merchant_id": "MERCH_0074",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0495",
+      "ip_id": "IP_00486",
+      "city": "Jaipur",
+      "seconds_since_previous": 2517735.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05512",
+      "timestamp": "2026-02-03T13:53:50",
+      "amount": 19089.84,
+      "merchant_id": "MERCH_0029",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0495",
+      "ip_id": "IP_00486",
+      "city": "Jaipur",
+      "seconds_since_previous": 112913.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_016'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00078`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_016` (MEMBER)\n**Transactional History**: 3 transactions (\u20b929,264.38)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_016'.\n============================================================"
+}

@@ -1,0 +1,238 @@
+{
+  "entity_id": "CUST_00604",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_015",
+  "member_role": "MEMBER",
+  "total_transactions": 10,
+  "total_spend": 24530.69,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "shared_proxy_infrastructure",
+      "severity": "HIGH",
+      "description": "Customer shares 1 Datacenter/VPN proxy IP addresses with other transacting accounts."
+    }
+  ],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b9506.32",
+      "baseline": "Customer Avg: \u20b9506.32",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b9506.32 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_00604",
+    "ring_id": "FR_015",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.95,
+    "degree": 28,
+    "pagerank": 0.000655,
+    "betweenness_centrality": 1.3e-05,
+    "clustering_coefficient": 0.2487,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00169",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01407",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00835",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00155",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01041",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00422",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00227",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00696",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "shared_proxy_infrastructure",
+        "severity": "HIGH",
+        "count": 1,
+        "description": "Customer shares 1 Datacenter/VPN proxy IP addresses with other transacting accounts."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.95,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_01441",
+      "timestamp": "2026-01-09T14:37:43",
+      "amount": 158.91,
+      "merchant_id": "MERCH_0049",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0100",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01735",
+      "timestamp": "2026-01-11T11:06:49",
+      "amount": 331.55,
+      "merchant_id": "MERCH_0011",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0203",
+      "ip_id": "IP_00021",
+      "city": "Jaipur",
+      "seconds_since_previous": 160146.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02963",
+      "timestamp": "2026-01-19T03:15:34",
+      "amount": 8161.14,
+      "merchant_id": "MERCH_0069",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0100",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 662925.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03109",
+      "timestamp": "2026-01-20T00:40:03",
+      "amount": 334.63,
+      "merchant_id": "MERCH_0002",
+      "payment_type": "UPI",
+      "device_id": "DEV_0100",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 77069.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05950",
+      "timestamp": "2026-02-06T09:25:44",
+      "amount": 13316.76,
+      "merchant_id": "MERCH_0017",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0203",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 1500341.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06591",
+      "timestamp": "2026-02-10T04:45:14",
+      "amount": 723.32,
+      "merchant_id": "MERCH_0002",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0100",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 328770.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06861",
+      "timestamp": "2026-02-11T13:20:33",
+      "amount": 430.73,
+      "merchant_id": "MERCH_0017",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0203",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 117319.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07072",
+      "timestamp": "2026-02-13T03:14:05",
+      "amount": 78.69,
+      "merchant_id": "MERCH_0061",
+      "payment_type": "UPI",
+      "device_id": "DEV_0100",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 136412.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08397",
+      "timestamp": "2026-02-20T10:43:45",
+      "amount": 488.64,
+      "merchant_id": "MERCH_0067",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0100",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 631780.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09584",
+      "timestamp": "2026-02-27T08:54:07",
+      "amount": 506.32,
+      "merchant_id": "MERCH_0014",
+      "payment_type": "UPI",
+      "device_id": "DEV_0100",
+      "ip_id": "IP_00021",
+      "city": "Bengaluru",
+      "seconds_since_previous": 598222.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_015'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00604`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_015` (MEMBER)\n**Transactional History**: 10 transactions (\u20b924,530.69)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Customer shares 1 Datacenter/VPN proxy IP addresses with other transacting accounts.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b9506.32 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_015'.\n============================================================"
+}

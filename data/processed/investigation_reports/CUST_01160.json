@@ -1,0 +1,255 @@
+{
+  "entity_id": "CUST_01160",
+  "entity_type": "customer",
+  "risk_score": 61.72,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_005",
+  "member_role": "MEMBER",
+  "total_transactions": 11,
+  "total_spend": 94747.59,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "merchant_spend_concentration",
+      "severity": "MEDIUM",
+      "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.45)."
+    }
+  ],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b9322.80",
+      "baseline": "Customer Avg: \u20b9322.80",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b9322.80 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_01160",
+    "ring_id": "FR_005",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.88,
+    "degree": 19,
+    "pagerank": 0.000443,
+    "betweenness_centrality": 6.2e-05,
+    "clustering_coefficient": 0.2807,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00687",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00912",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00154",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01730",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01009",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00545",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01205",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00940",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "merchant_spend_concentration",
+        "severity": "MEDIUM",
+        "value": "HHI: 0.45",
+        "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.45)."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.88,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00336",
+      "timestamp": "2026-01-03T01:21:54",
+      "amount": 850.3,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_00492",
+      "timestamp": "2026-01-04T00:14:48",
+      "amount": 4434.48,
+      "merchant_id": "MERCH_0030",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 82374.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03209",
+      "timestamp": "2026-01-20T10:42:29",
+      "amount": 4965.76,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 1420061.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_03459",
+      "timestamp": "2026-01-22T04:51:11",
+      "amount": 29397.16,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 151722.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_03919",
+      "timestamp": "2026-01-25T02:10:23",
+      "amount": 52683.27,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 249552.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_04555",
+      "timestamp": "2026-01-29T03:29:21",
+      "amount": 73.33,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 350338.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05843",
+      "timestamp": "2026-02-05T13:23:05",
+      "amount": 660.92,
+      "merchant_id": "MERCH_0030",
+      "payment_type": "UPI",
+      "device_id": "DEV_0032",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 640424.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06406",
+      "timestamp": "2026-02-08T23:05:26",
+      "amount": 286.42,
+      "merchant_id": "MERCH_0017",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 294141.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07101",
+      "timestamp": "2026-02-13T06:07:25",
+      "amount": 948.4,
+      "merchant_id": "MERCH_0042",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 370919.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07909",
+      "timestamp": "2026-02-17T17:32:34",
+      "amount": 124.75,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 386709.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09807",
+      "timestamp": "2026-02-28T15:44:46",
+      "amount": 322.8,
+      "merchant_id": "MERCH_0075",
+      "payment_type": "UPI",
+      "device_id": "DEV_0324",
+      "ip_id": "IP_00042",
+      "city": "Chennai",
+      "seconds_since_previous": 943932.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_005'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01160`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_005` (MEMBER)\n**Transactional History**: 11 transactions (\u20b994,747.59)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [MEDIUM] Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 0.45).\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b9322.80 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_005'.\n============================================================"
+}

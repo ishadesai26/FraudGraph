@@ -1,0 +1,198 @@
+{
+  "entity_id": "CUST_00660",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_015",
+  "member_role": "MEMBER",
+  "total_transactions": 8,
+  "total_spend": 7160.88,
+  "evidence": [],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b9377.55",
+      "baseline": "Customer Avg: \u20b9377.55",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b9377.55 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_00660",
+    "ring_id": "FR_015",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.95,
+    "degree": 28,
+    "pagerank": 0.000486,
+    "betweenness_centrality": 0.012306,
+    "clustering_coefficient": 0.1534,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01967",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01127",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00160",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01416",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01873",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01217",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01727",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01783",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.95,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00559",
+      "timestamp": "2026-01-04T08:01:23",
+      "amount": 2869.2,
+      "merchant_id": "MERCH_0070",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00734",
+      "city": "Mumbai",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02385",
+      "timestamp": "2026-01-15T13:37:27",
+      "amount": 1606.96,
+      "merchant_id": "MERCH_0093",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00734",
+      "city": "Mumbai",
+      "seconds_since_previous": 970564.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_04874",
+      "timestamp": "2026-01-31T01:38:34",
+      "amount": 404.07,
+      "merchant_id": "MERCH_0099",
+      "payment_type": "UPI",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00522",
+      "city": "Mumbai",
+      "seconds_since_previous": 1339267.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05321",
+      "timestamp": "2026-02-02T10:26:28",
+      "amount": 1083.3,
+      "merchant_id": "MERCH_0099",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00734",
+      "city": "Mumbai",
+      "seconds_since_previous": 204474.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05844",
+      "timestamp": "2026-02-05T13:28:46",
+      "amount": 250.6,
+      "merchant_id": "MERCH_0010",
+      "payment_type": "UPI",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00060",
+      "city": "Mumbai",
+      "seconds_since_previous": 270138.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06142",
+      "timestamp": "2026-02-07T09:03:36",
+      "amount": 75.74,
+      "merchant_id": "MERCH_0048",
+      "payment_type": "UPI",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00060",
+      "city": "Mumbai",
+      "seconds_since_previous": 156890.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07908",
+      "timestamp": "2026-02-17T17:23:08",
+      "amount": 493.46,
+      "merchant_id": "MERCH_0012",
+      "payment_type": "UPI",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00734",
+      "city": "Mumbai",
+      "seconds_since_previous": 893972.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08494",
+      "timestamp": "2026-02-21T03:12:04",
+      "amount": 377.55,
+      "merchant_id": "MERCH_0018",
+      "payment_type": "UPI",
+      "device_id": "DEV_0222",
+      "ip_id": "IP_00747",
+      "city": "Hyderabad",
+      "seconds_since_previous": 294536.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_015'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00660`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_015` (MEMBER)\n**Transactional History**: 8 transactions (\u20b97,160.88)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b9377.55 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_015'.\n============================================================"
+}

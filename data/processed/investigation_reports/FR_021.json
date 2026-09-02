@@ -1,0 +1,139 @@
+{
+  "entity_id": "FR_021",
+  "entity_type": "fraud_ring",
+  "risk_score": 85.0,
+  "risk_level": "CRITICAL",
+  "explanation_confidence": "HIGH",
+  "customer_count": 123,
+  "transaction_count": 657,
+  "transaction_volume": 4931504.14,
+  "shared_devices_count": 28,
+  "shared_payments_count": 30,
+  "evidence": [
+    {
+      "signal": "syndicate_shared_devices",
+      "severity": "HIGH",
+      "count": 28,
+      "description": "Syndicate shares 28 hardware devices across 123 member accounts."
+    },
+    {
+      "signal": "syndicate_shared_payment_methods",
+      "severity": "CRITICAL",
+      "count": 30,
+      "description": "Syndicate funnels transactions through 30 shared credit cards and UPI VPAs."
+    }
+  ],
+  "top_members": [
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01897",
+      "individual_risk_score": 41.88,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_00797",
+      "individual_risk_score": 16.92,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01146",
+      "individual_risk_score": 8.33,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_00576",
+      "individual_risk_score": 19.69,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01099",
+      "individual_risk_score": 11.76,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_00957",
+      "individual_risk_score": 13.52,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01548",
+      "individual_risk_score": 12.17,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_00400",
+      "individual_risk_score": 9.52,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_00730",
+      "individual_risk_score": 8.78,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01084",
+      "individual_risk_score": 11.7,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_00498",
+      "individual_risk_score": 9.72,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01452",
+      "individual_risk_score": 11.6,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01141",
+      "individual_risk_score": 11.23,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_01454",
+      "individual_risk_score": 9.41,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    },
+    {
+      "ring_id": "FR_021",
+      "customer_id": "CUST_00288",
+      "individual_risk_score": 11.69,
+      "network_risk_score": 85.0,
+      "is_core_member": false
+    }
+  ],
+  "recommendations": [
+    "Audit 30 shared payment instruments across member accounts for synthetic identity collusion.",
+    "Review session logs for 28 shared hardware devices for automated script or bot activity.",
+    "Correlate merchant payout accounts receiving aggregated syndicate payments."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH SYNDICATE INVESTIGATION DOSSIER\n============================================================\n**Syndicate Identifier**: Fraud Ring `FR_021`\n**Network Risk Rating**: `85.0 / 100` (CRITICAL)\n**Investigation Confidence**: `HIGH`\n**Syndicate Scale**: 123 Member Accounts | 657 Transactions\n**Total Rupee Volume**: \u20b94,931,504.14\n------------------------------------------------------------\n\n## 1. Syndicate Shared Infrastructure\n- **Shared Hardware Devices**: 28\n- **Shared Payment Instruments**: 30\n\n## 2. Key Forensic Findings\n1. [HIGH] Syndicate shares 28 hardware devices across 123 member accounts.\n2. [CRITICAL] Syndicate funnels transactions through 30 shared credit cards and UPI VPAs.\n\n## 3. High-Priority Member Accounts\n- Account `CUST_01897` | Role: `MEMBER` | Risk Score: `85.0`\n- Account `CUST_00797` | Role: `MEMBER` | Risk Score: `85.0`\n- Account `CUST_01146` | Role: `MEMBER` | Risk Score: `85.0`\n- Account `CUST_00576` | Role: `MEMBER` | Risk Score: `85.0`\n- Account `CUST_01099` | Role: `MEMBER` | Risk Score: `85.0`\n- Account `CUST_00957` | Role: `MEMBER` | Risk Score: `85.0`\n- Account `CUST_01548` | Role: `MEMBER` | Risk Score: `85.0`\n- Account `CUST_00400` | Role: `MEMBER` | Risk Score: `85.0`\n\n## 4. Recommended Syndicate Disruption Steps\n1. Cross-reference shared payment credentials against issuer chargeback alerts.\n2. Block transaction authorization on compromised shared hardware device fingerprints.\n3. Audit merchant settlement accounts receiving concentrated syndicate transfers.\n============================================================"
+}

@@ -1,0 +1,31 @@
+{
+  "total_entities_indexed": 2005,
+  "investigated_rings_count": 26,
+  "high_risk_customers_count": 39,
+  "highest_risk_ring": {
+    "ring_id": "FR_017",
+    "risk_score": 100.0,
+    "risk_level": "CRITICAL",
+    "customer_count": 161,
+    "transaction_volume": 4245171.55
+  },
+  "highest_risk_customer": {
+    "customer_id": "CUST_00028",
+    "risk_score": 99.14,
+    "risk_level": "CRITICAL",
+    "associated_ring_id": "FR_015"
+  },
+  "top_detected_signals": [
+    "shared_device_cluster",
+    "shared_payment_instrument",
+    "proxy_ip_routing",
+    "temporal_burst_synchronization",
+    "amount_spike"
+  ],
+  "recommended_investigation_categories": [
+    "Shared Payment Instrument Auditing",
+    "Shared Hardware Device Fingerprinting",
+    "Syndicate Merchant Extraction Analysis",
+    "Coordinated Burst Time Window Inspections"
+  ]
+}

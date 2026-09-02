@@ -1,0 +1,121 @@
+{
+  "entity_id": "CUST_01436",
+  "entity_type": "customer",
+  "risk_score": 62.5,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_017",
+  "member_role": "MEMBER",
+  "total_transactions": 1,
+  "total_spend": 413.77,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "merchant_spend_concentration",
+      "severity": "MEDIUM",
+      "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 1.00)."
+    }
+  ],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b9413.77",
+      "baseline": "Customer Avg: \u20b9413.77",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b9413.77 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_01436",
+    "ring_id": "FR_017",
+    "member_role": "MEMBER",
+    "network_risk_score": 100.0,
+    "degree": 8,
+    "pagerank": 0.00022,
+    "betweenness_centrality": 0.000134,
+    "clustering_coefficient": 0.3929,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01058",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00810",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00629",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01286",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00397",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01987",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00251",
+        "relational_weight": 1.0
+      },
+      {
+        "customer_id": "CUST_01654",
+        "relational_weight": 1.0
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "merchant_spend_concentration",
+        "severity": "MEDIUM",
+        "value": "HHI: 1.00",
+        "description": "Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 1.00)."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 100.0,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_08057",
+      "timestamp": "2026-02-18T12:32:31",
+      "amount": 413.77,
+      "merchant_id": "MERCH_0091",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0209",
+      "ip_id": "IP_00661",
+      "city": "Jaipur",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_017'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01436`\n**Composite Risk Score**: `62.5 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_017` (MEMBER)\n**Transactional History**: 1 transactions (\u20b9413.77)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [MEDIUM] Spend is heavily concentrated across few merchants (Herfindahl-Hirschman Index: 1.00).\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b9413.77 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_017'.\n============================================================"
+}

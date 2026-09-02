@@ -1,0 +1,187 @@
+{
+  "entity_id": "CUST_01094",
+  "entity_type": "customer",
+  "risk_score": 61.73,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_016",
+  "member_role": "MEMBER",
+  "total_transactions": 7,
+  "total_spend": 48616.09,
+  "evidence": [],
+  "protective_factors": [
+    {
+      "signal": "consistent_amount",
+      "feature": "amount",
+      "severity": "LOW",
+      "value": "\u20b978.38",
+      "baseline": "Customer Avg: \u20b978.38",
+      "importance": 0.05,
+      "type": "PROTECTIVE_SIGNAL",
+      "description": "Transaction amount of \u20b978.38 aligns with customer's typical spending patterns."
+    }
+  ],
+  "network_details": {
+    "customer_id": "CUST_01094",
+    "ring_id": "FR_016",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.9,
+    "degree": 18,
+    "pagerank": 0.000428,
+    "betweenness_centrality": 1.3e-05,
+    "clustering_coefficient": 0.3791,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01239",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01603",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00114",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01398",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00595",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00011",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01697",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00476",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.9,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_03199",
+      "timestamp": "2026-01-20T10:20:59",
+      "amount": 9200.4,
+      "merchant_id": "MERCH_0009",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0225",
+      "ip_id": "IP_00754",
+      "city": "Bengaluru",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05864",
+      "timestamp": "2026-02-05T16:00:57",
+      "amount": 689.96,
+      "merchant_id": "MERCH_0006",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0225",
+      "ip_id": "IP_00754",
+      "city": "Bengaluru",
+      "seconds_since_previous": 1402798.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_05951",
+      "timestamp": "2026-02-06T09:26:42",
+      "amount": 36323.61,
+      "merchant_id": "MERCH_0061",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0225",
+      "ip_id": "IP_00754",
+      "city": "Bengaluru",
+      "seconds_since_previous": 62745.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_06747",
+      "timestamp": "2026-02-11T02:58:19",
+      "amount": 354.43,
+      "merchant_id": "MERCH_0006",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0225",
+      "ip_id": "IP_00754",
+      "city": "Bengaluru",
+      "seconds_since_previous": 408697.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07912",
+      "timestamp": "2026-02-17T17:40:24",
+      "amount": 62.84,
+      "merchant_id": "MERCH_0061",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0225",
+      "ip_id": "IP_00754",
+      "city": "Bengaluru",
+      "seconds_since_previous": 571325.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08000",
+      "timestamp": "2026-02-18T07:24:56",
+      "amount": 1906.47,
+      "merchant_id": "MERCH_0061",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0225",
+      "ip_id": "IP_00754",
+      "city": "Bengaluru",
+      "seconds_since_previous": 49472.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08723",
+      "timestamp": "2026-02-22T09:01:03",
+      "amount": 78.38,
+      "merchant_id": "MERCH_0009",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0225",
+      "ip_id": "IP_00754",
+      "city": "Bengaluru",
+      "seconds_since_previous": 351367.0,
+      "is_burst": false,
+      "tags": []
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_016'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01094`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_016` (MEMBER)\n**Transactional History**: 7 transactions (\u20b948,616.09)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 3. Mitigating & Protective Factors\n- **consistent_amount**: Transaction amount of \u20b978.38 aligns with customer's typical spending patterns.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_016'.\n============================================================"
+}

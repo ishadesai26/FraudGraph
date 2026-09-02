@@ -1,0 +1,150 @@
+{
+  "entity_id": "CUST_00826",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_018",
+  "member_role": "MEMBER",
+  "total_transactions": 5,
+  "total_spend": 82819.22,
+  "evidence": [],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00826",
+    "ring_id": "FR_018",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.97,
+    "degree": 21,
+    "pagerank": 0.000427,
+    "betweenness_centrality": 0.000155,
+    "clustering_coefficient": 0.3429,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00252",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00629",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00766",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00039",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01421",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01845",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01191",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00300",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.97,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_01104",
+      "timestamp": "2026-01-07T13:32:28",
+      "amount": 203.42,
+      "merchant_id": "MERCH_0080",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0416",
+      "ip_id": "IP_00651",
+      "city": "Delhi",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01315",
+      "timestamp": "2026-01-09T02:07:03",
+      "amount": 516.03,
+      "merchant_id": "MERCH_0076",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0416",
+      "ip_id": "IP_00330",
+      "city": "Delhi",
+      "seconds_since_previous": 131675.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_01872",
+      "timestamp": "2026-01-12T10:39:13",
+      "amount": 387.35,
+      "merchant_id": "MERCH_0079",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0416",
+      "ip_id": "IP_00651",
+      "city": "Delhi",
+      "seconds_since_previous": 289930.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06006",
+      "timestamp": "2026-02-06T14:04:12",
+      "amount": 885.41,
+      "merchant_id": "MERCH_0076",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0416",
+      "ip_id": "IP_00330",
+      "city": "Delhi",
+      "seconds_since_previous": 2172299.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09092",
+      "timestamp": "2026-02-24T10:57:21",
+      "amount": 80827.01,
+      "merchant_id": "MERCH_0079",
+      "payment_type": "DEBIT_CARD",
+      "device_id": "DEV_0416",
+      "ip_id": "IP_00651",
+      "city": "Delhi",
+      "seconds_since_previous": 1543989.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_018'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00826`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_018` (MEMBER)\n**Transactional History**: 5 transactions (\u20b982,819.22)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_018'.\n============================================================"
+}

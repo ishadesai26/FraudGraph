@@ -1,0 +1,203 @@
+{
+  "entity_id": "CUST_00789",
+  "entity_type": "customer",
+  "risk_score": 61.74,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_015",
+  "member_role": "MEMBER",
+  "total_transactions": 8,
+  "total_spend": 40156.9,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "shared_proxy_infrastructure",
+      "severity": "HIGH",
+      "description": "Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts."
+    }
+  ],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00789",
+    "ring_id": "FR_015",
+    "member_role": "MEMBER",
+    "network_risk_score": 96.95,
+    "degree": 28,
+    "pagerank": 0.000529,
+    "betweenness_centrality": 0.004088,
+    "clustering_coefficient": 0.2249,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01442",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01945",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01598",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00940",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01247",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00597",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01521",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01464",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "shared_proxy_infrastructure",
+        "severity": "HIGH",
+        "count": 4,
+        "description": "Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 96.95,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_04747",
+      "timestamp": "2026-01-30T05:28:00",
+      "amount": 145.62,
+      "merchant_id": "MERCH_0034",
+      "payment_type": "UPI",
+      "device_id": "DEV_0433",
+      "ip_id": "IP_00310",
+      "city": "Ahmedabad",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_04782",
+      "timestamp": "2026-01-30T10:12:38",
+      "amount": 2490.51,
+      "merchant_id": "MERCH_0059",
+      "payment_type": "UPI",
+      "device_id": "DEV_0433",
+      "ip_id": "IP_00310",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 17078.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06019",
+      "timestamp": "2026-02-06T15:13:00",
+      "amount": 105.25,
+      "merchant_id": "MERCH_0008",
+      "payment_type": "UPI",
+      "device_id": "DEV_0433",
+      "ip_id": "IP_00310",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 622822.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06538",
+      "timestamp": "2026-02-09T15:45:07",
+      "amount": 393.09,
+      "merchant_id": "MERCH_0072",
+      "payment_type": "UPI",
+      "device_id": "DEV_0433",
+      "ip_id": "IP_00310",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 261127.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06625",
+      "timestamp": "2026-02-10T08:11:13",
+      "amount": 239.12,
+      "merchant_id": "MERCH_0098",
+      "payment_type": "UPI",
+      "device_id": "DEV_0433",
+      "ip_id": "IP_00745",
+      "city": "Mumbai",
+      "seconds_since_previous": 59166.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07743",
+      "timestamp": "2026-02-16T20:56:09",
+      "amount": 631.73,
+      "merchant_id": "MERCH_0059",
+      "payment_type": "UPI",
+      "device_id": "DEV_0433",
+      "ip_id": "IP_00310",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 564296.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_08108",
+      "timestamp": "2026-02-19T01:56:17",
+      "amount": 8958.3,
+      "merchant_id": "MERCH_0018",
+      "payment_type": "UPI",
+      "device_id": "DEV_0312",
+      "ip_id": "IP_00310",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 190808.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09585",
+      "timestamp": "2026-02-27T08:55:54",
+      "amount": 27193.28,
+      "merchant_id": "MERCH_0049",
+      "payment_type": "UPI",
+      "device_id": "DEV_0433",
+      "ip_id": "IP_00925",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 716377.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_015'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00789`\n**Composite Risk Score**: `61.7 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_015` (MEMBER)\n**Transactional History**: 8 transactions (\u20b940,156.90)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_015'.\n============================================================"
+}

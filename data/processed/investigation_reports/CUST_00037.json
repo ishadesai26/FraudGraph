@@ -1,0 +1,213 @@
+{
+  "entity_id": "CUST_00037",
+  "entity_type": "customer",
+  "risk_score": 83.03,
+  "risk_level": "CRITICAL",
+  "explanation_confidence": "HIGH",
+  "associated_ring_id": "FR_011",
+  "member_role": "MEMBER",
+  "total_transactions": 7,
+  "total_spend": 82424.98,
+  "evidence": [
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "shared_proxy_infrastructure",
+      "severity": "HIGH",
+      "description": "Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts."
+    },
+    {
+      "source": "GRAPH_NETWORK",
+      "signal": "temporal_burst_synchronization",
+      "severity": "HIGH",
+      "description": "50.0% of customer transactions occurred within narrow synchronized bursts (< 180s)."
+    },
+    {
+      "source": "BEHAVIORAL_MODEL",
+      "signal": "supervised_model_risk",
+      "severity": "CRITICAL",
+      "description": "Supervised RandomForest fraud classifier estimated a 96.4% fraud probability."
+    }
+  ],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00037",
+    "ring_id": "FR_011",
+    "member_role": "MEMBER",
+    "network_risk_score": 79.68,
+    "degree": 30,
+    "pagerank": 0.000663,
+    "betweenness_centrality": 0.000513,
+    "clustering_coefficient": 0.223,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00413",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01478",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01597",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01014",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01066",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01819",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00250",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00244",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": [
+      {
+        "signal": "shared_proxy_infrastructure",
+        "severity": "HIGH",
+        "count": 4,
+        "description": "Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts."
+      },
+      {
+        "signal": "temporal_burst_synchronization",
+        "severity": "HIGH",
+        "value": "50.0% synchronized",
+        "description": "50.0% of customer transactions occurred within narrow synchronized bursts (< 180s)."
+      }
+    ]
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 96.39,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 79.68,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 59.66,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_03891",
+      "timestamp": "2026-01-24T15:55:26",
+      "amount": 413.91,
+      "merchant_id": "MERCH_0022",
+      "payment_type": "UPI",
+      "device_id": "DEV_0284",
+      "ip_id": "IP_00741",
+      "city": "Surat",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06728",
+      "timestamp": "2026-02-10T20:15:20",
+      "amount": 23042.73,
+      "merchant_id": "MERCH_0038",
+      "payment_type": "UPI",
+      "device_id": "DEV_0284",
+      "ip_id": "IP_00741",
+      "city": "Surat",
+      "seconds_since_previous": 1484394.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06729",
+      "timestamp": "2026-02-10T20:15:26",
+      "amount": 7695.37,
+      "merchant_id": "MERCH_0030",
+      "payment_type": "UPI",
+      "device_id": "DEV_0284",
+      "ip_id": "IP_00741",
+      "city": "Surat",
+      "seconds_since_previous": 6.0,
+      "is_burst": true,
+      "tags": [
+        "BURST_SYNC"
+      ]
+    },
+    {
+      "transaction_id": "TXN_06730",
+      "timestamp": "2026-02-10T20:15:33",
+      "amount": 16166.32,
+      "merchant_id": "MERCH_0001",
+      "payment_type": "UPI",
+      "device_id": "DEV_0284",
+      "ip_id": "IP_00547",
+      "city": "Surat",
+      "seconds_since_previous": 7.0,
+      "is_burst": true,
+      "tags": [
+        "BURST_SYNC"
+      ]
+    },
+    {
+      "transaction_id": "TXN_06991",
+      "timestamp": "2026-02-12T10:31:06",
+      "amount": 619.56,
+      "merchant_id": "MERCH_0099",
+      "payment_type": "UPI",
+      "device_id": "DEV_0284",
+      "ip_id": "IP_00547",
+      "city": "Surat",
+      "seconds_since_previous": 137733.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09068",
+      "timestamp": "2026-02-24T09:28:40",
+      "amount": 14252.88,
+      "merchant_id": "MERCH_0014",
+      "payment_type": "UPI",
+      "device_id": "DEV_0284",
+      "ip_id": "IP_00547",
+      "city": "Surat",
+      "seconds_since_previous": 1033054.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_09074",
+      "timestamp": "2026-02-24T09:30:59",
+      "amount": 20234.21,
+      "merchant_id": "MERCH_0009",
+      "payment_type": "UPI",
+      "device_id": "DEV_0284",
+      "ip_id": "IP_00547",
+      "city": "Surat",
+      "seconds_since_previous": 139.0,
+      "is_burst": true,
+      "tags": [
+        "BURST_SYNC"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_011'.",
+    "Initiate mandatory step-up identity verification challenge prior to fund release."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00037`\n**Composite Risk Score**: `83.0 / 100` (CRITICAL)\n**Explanation Confidence**: `HIGH`\n**Syndicate Association**: `FR_011` (MEMBER)\n**Transactional History**: 7 transactions (\u20b982,424.98)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [HIGH] Customer shares 4 Datacenter/VPN proxy IP addresses with other transacting accounts.\n2. [HIGH] 50.0% of customer transactions occurred within narrow synchronized bursts (< 180s).\n3. [CRITICAL] Supervised RandomForest fraud classifier estimated a 96.4% fraud probability.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_011'.\n2. Initiate mandatory step-up identity verification challenge prior to fund release.\n============================================================"
+}

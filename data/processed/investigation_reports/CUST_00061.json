@@ -1,0 +1,206 @@
+{
+  "entity_id": "CUST_00061",
+  "entity_type": "customer",
+  "risk_score": 78.49,
+  "risk_level": "HIGH",
+  "explanation_confidence": "MEDIUM",
+  "associated_ring_id": "FR_026",
+  "member_role": "MEMBER",
+  "total_transactions": 8,
+  "total_spend": 170661.77,
+  "evidence": [
+    {
+      "source": "BEHAVIORAL_MODEL",
+      "signal": "supervised_model_risk",
+      "severity": "CRITICAL",
+      "description": "Supervised RandomForest fraud classifier estimated a 81.2% fraud probability."
+    },
+    {
+      "source": "BEHAVIORAL_MODEL",
+      "signal": "behavioral_anomaly_score",
+      "severity": "MEDIUM",
+      "description": "Unsupervised IsolationForest flagged multi-dimensional behavioral deviation (Score: 66.6/100)."
+    }
+  ],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_00061",
+    "ring_id": "FR_026",
+    "member_role": "MEMBER",
+    "network_risk_score": 85.0,
+    "degree": 46,
+    "pagerank": 0.001092,
+    "betweenness_centrality": 0.001265,
+    "clustering_coefficient": 0.2319,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_00066",
+        "relational_weight": 9.0
+      },
+      {
+        "customer_id": "CUST_00357",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01151",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01150",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00579",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01524",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01298",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_01069",
+        "relational_weight": 3.5
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 81.15,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 85.0,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 66.64,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00643",
+      "timestamp": "2026-01-04T19:48:45",
+      "amount": 5723.61,
+      "merchant_id": "MERCH_0027",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0125",
+      "ip_id": "IP_00626",
+      "city": "Bengaluru",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02090",
+      "timestamp": "2026-01-13T18:38:34",
+      "amount": 311.25,
+      "merchant_id": "MERCH_0002",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0435",
+      "ip_id": "IP_00626",
+      "city": "Bengaluru",
+      "seconds_since_previous": 773389.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02150",
+      "timestamp": "2026-01-14T05:43:38",
+      "amount": 414.67,
+      "merchant_id": "MERCH_0013",
+      "payment_type": "UPI",
+      "device_id": "DEV_0125",
+      "ip_id": "IP_00626",
+      "city": "Bengaluru",
+      "seconds_since_previous": 39904.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06180",
+      "timestamp": "2026-02-07T13:18:23",
+      "amount": 114.1,
+      "merchant_id": "MERCH_0020",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0435",
+      "ip_id": "IP_00626",
+      "city": "Bengaluru",
+      "seconds_since_previous": 2100885.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_06551",
+      "timestamp": "2026-02-09T18:02:43",
+      "amount": 66886.44,
+      "merchant_id": "MERCH_0045",
+      "payment_type": "UPI",
+      "device_id": "DEV_0125",
+      "ip_id": "IP_00120",
+      "city": "Bengaluru",
+      "seconds_since_previous": 189860.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_07874",
+      "timestamp": "2026-02-17T12:19:16",
+      "amount": 931.96,
+      "merchant_id": "MERCH_0049",
+      "payment_type": "CREDIT_CARD",
+      "device_id": "DEV_0125",
+      "ip_id": "IP_00626",
+      "city": "Bengaluru",
+      "seconds_since_previous": 670593.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07917",
+      "timestamp": "2026-02-17T19:14:44",
+      "amount": 62607.98,
+      "merchant_id": "MERCH_0045",
+      "payment_type": "UPI",
+      "device_id": "DEV_0095",
+      "ip_id": "IP_00120",
+      "city": "Bengaluru",
+      "seconds_since_previous": 24928.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    },
+    {
+      "transaction_id": "TXN_08092",
+      "timestamp": "2026-02-18T18:04:33",
+      "amount": 33671.76,
+      "merchant_id": "MERCH_0046",
+      "payment_type": "UPI",
+      "device_id": "DEV_0095",
+      "ip_id": "IP_00120",
+      "city": "Bengaluru",
+      "seconds_since_previous": 82189.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_026'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_00061`\n**Composite Risk Score**: `78.5 / 100` (HIGH)\n**Explanation Confidence**: `MEDIUM`\n**Syndicate Association**: `FR_026` (MEMBER)\n**Transactional History**: 8 transactions (\u20b9170,661.77)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\n1. [CRITICAL] Supervised RandomForest fraud classifier estimated a 81.2% fraud probability.\n2. [MEDIUM] Unsupervised IsolationForest flagged multi-dimensional behavioral deviation (Score: 66.6/100).\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_026'.\n============================================================"
+}

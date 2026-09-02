@@ -1,0 +1,137 @@
+{
+  "entity_id": "CUST_01034",
+  "entity_type": "customer",
+  "risk_score": 62.5,
+  "risk_level": "HIGH",
+  "explanation_confidence": "LOW",
+  "associated_ring_id": "FR_017",
+  "member_role": "MEMBER",
+  "total_transactions": 4,
+  "total_spend": 62663.55,
+  "evidence": [],
+  "protective_factors": [],
+  "network_details": {
+    "customer_id": "CUST_01034",
+    "ring_id": "FR_017",
+    "member_role": "MEMBER",
+    "network_risk_score": 100.0,
+    "degree": 12,
+    "pagerank": 0.000265,
+    "betweenness_centrality": 0.000171,
+    "clustering_coefficient": 0.3788,
+    "shared_devices": [],
+    "shared_payments": [],
+    "connected_neighbors": [
+      {
+        "customer_id": "CUST_01965",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00927",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01196",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00457",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_00142",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01698",
+        "relational_weight": 4.5
+      },
+      {
+        "customer_id": "CUST_01328",
+        "relational_weight": 3.5
+      },
+      {
+        "customer_id": "CUST_00617",
+        "relational_weight": 1.0
+      }
+    ],
+    "network_evidence": []
+  },
+  "contributing_signals": [
+    {
+      "name": "supervised_model_probability",
+      "value": 50.0,
+      "importance": 0.5
+    },
+    {
+      "name": "network_risk_score",
+      "value": 100.0,
+      "importance": 0.25
+    },
+    {
+      "name": "unsupervised_anomaly_score",
+      "value": 50.0,
+      "importance": 0.25
+    }
+  ],
+  "timeline": [
+    {
+      "transaction_id": "TXN_00297",
+      "timestamp": "2026-01-02T14:45:29",
+      "amount": 10011.23,
+      "merchant_id": "MERCH_0015",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0329",
+      "ip_id": "IP_00026",
+      "city": "Ahmedabad",
+      "seconds_since_previous": null,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02319",
+      "timestamp": "2026-01-15T05:47:34",
+      "amount": 1008.81,
+      "merchant_id": "MERCH_0085",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0329",
+      "ip_id": "IP_00026",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 1090925.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_02795",
+      "timestamp": "2026-01-18T03:21:14",
+      "amount": 884.18,
+      "merchant_id": "MERCH_0058",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0329",
+      "ip_id": "IP_00026",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 250420.0,
+      "is_burst": false,
+      "tags": []
+    },
+    {
+      "transaction_id": "TXN_07068",
+      "timestamp": "2026-02-13T02:48:15",
+      "amount": 50759.33,
+      "merchant_id": "MERCH_0019",
+      "payment_type": "WALLET",
+      "device_id": "DEV_0329",
+      "ip_id": "IP_00026",
+      "city": "Ahmedabad",
+      "seconds_since_previous": 2244421.0,
+      "is_burst": false,
+      "tags": [
+        "HIGH_VALUE"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Audit coordinated transaction flow within syndicate 'FR_017'."
+  ],
+  "investigation_report_markdown": "# FRAUDGRAPH FORENSIC INVESTIGATION REPORT\n============================================================\n**Target Entity**: Customer `CUST_01034`\n**Composite Risk Score**: `62.5 / 100` (HIGH)\n**Explanation Confidence**: `LOW`\n**Syndicate Association**: `FR_017` (MEMBER)\n**Transactional History**: 4 transactions (\u20b962,663.55)\n------------------------------------------------------------\n\n## 1. Primary Reasons Flagged\nNo critical fraud signals detected. Standard account behavior.\n\n## 2. Network & Relational Evidence\n- **Shared Hardware Devices**: None detected.\n- **Shared Payment Instruments**: None detected.\n\n## 4. Recommended Investigator Action Plan\n1. Audit coordinated transaction flow within syndicate 'FR_017'.\n============================================================"
+}
