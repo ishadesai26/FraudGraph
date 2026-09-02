@@ -1,0 +1,39 @@
+# Environments
+.env
+.env.local
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.eggs/
+
+# Node / Web artifacts (for future frontend phases)
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# IDE / Editor temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Note: data/raw/ and data/processed/ CSV files are explicitly tracked for hackathon evaluation and reproducibility.
