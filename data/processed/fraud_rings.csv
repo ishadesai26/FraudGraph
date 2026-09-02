@@ -1,0 +1,27 @@
+ring_id,risk_score,customer_count,transaction_count,transaction_volume,shared_device_count,shared_ip_count,shared_payment_count,merchant_count,geographic_spread,time_synchronization_score,risk_signals
+FR_017,100.0,161,750,4245171.55,45,30,41,100,10,0.007,"shared_devices(45); shared_payment_instruments(41); shared_datacenter_vpn(4); synchronized_timing(sync=0.01,co_tx=3)"
+FR_018,96.97,58,323,2341407.35,6,8,13,94,10,0.004,"shared_devices(6); shared_payment_instruments(13); shared_datacenter_vpn(1); synchronized_timing(sync=0.00,co_tx=1)"
+FR_015,96.95,86,467,4019437.56,16,7,19,99,10,0.003,"shared_devices(16); shared_payment_instruments(19); shared_datacenter_vpn(3); synchronized_timing(sync=0.00,co_tx=1)"
+FR_016,96.9,97,500,2926004.44,14,8,25,99,10,0.001,"shared_devices(14); shared_payment_instruments(25); shared_datacenter_vpn(1); synchronized_timing(sync=0.00,co_tx=1)"
+FR_005,96.88,59,293,2484611.3,15,7,15,89,10,0.0,"shared_devices(15); shared_payment_instruments(15); shared_datacenter_vpn(1); synchronized_timing(sync=0.00,co_tx=1)"
+FR_008,85.0,54,297,1811087.79,6,4,11,94,10,0.0,shared_devices(6); shared_payment_instruments(11); shared_datacenter_vpn(1)
+FR_010,85.0,48,242,1443329.85,4,3,13,83,10,0.0,shared_devices(4); shared_payment_instruments(13); shared_datacenter_vpn(1)
+FR_009,85.0,101,506,3246359.98,22,16,27,99,10,0.0,shared_devices(22); shared_payment_instruments(27); shared_datacenter_vpn(4)
+FR_004,85.0,74,368,2881356.15,9,7,19,97,10,0.0,shared_devices(9); shared_payment_instruments(19); shared_datacenter_vpn(1)
+FR_003,85.0,79,413,2575382.5,21,10,18,97,10,0.004,shared_devices(21); shared_payment_instruments(18); shared_datacenter_vpn(2)
+FR_025,85.0,79,407,3635713.6,14,11,21,94,10,0.0,shared_devices(14); shared_payment_instruments(21); shared_datacenter_vpn(1)
+FR_026,85.0,85,455,5543995.34,19,13,19,98,10,0.0,shared_devices(19); shared_payment_instruments(19); shared_datacenter_vpn(1)
+FR_022,85.0,129,647,4282997.06,33,24,28,99,10,0.0,shared_devices(33); shared_payment_instruments(28); shared_datacenter_vpn(5)
+FR_019,85.0,52,268,1606384.24,10,5,13,88,10,0.0,shared_devices(10); shared_payment_instruments(13); shared_datacenter_vpn(1)
+FR_013,85.0,99,490,3692958.39,23,16,20,99,10,0.002,shared_devices(23); shared_payment_instruments(20); shared_datacenter_vpn(3)
+FR_012,85.0,99,481,3154351.43,21,9,22,97,10,0.0,shared_devices(21); shared_payment_instruments(22); shared_datacenter_vpn(1)
+FR_021,85.0,123,657,4931504.14,28,21,30,99,10,0.0,shared_devices(28); shared_payment_instruments(30); shared_datacenter_vpn(2)
+FR_011,79.68,69,359,2082945.01,11,3,14,96,10,0.007,"shared_devices(11); shared_payment_instruments(14); shared_residential_ip(3); synchronized_timing(sync=0.01,co_tx=1)"
+FR_001,71.0,53,262,1518504.77,7,5,13,93,10,0.0,shared_devices(7); shared_payment_instruments(13); shared_residential_ip(5)
+FR_007,71.0,42,188,1266900.65,4,4,10,81,10,0.0,shared_devices(4); shared_payment_instruments(10); shared_residential_ip(4)
+FR_006,71.0,74,362,2994698.53,13,12,20,93,10,0.0,shared_devices(13); shared_payment_instruments(20); shared_residential_ip(12)
+FR_002,69.5,52,255,1771618.8,9,3,12,89,10,0.0,shared_devices(9); shared_payment_instruments(12); shared_residential_ip(3)
+FR_023,69.5,43,201,1365758.01,4,3,12,77,10,0.0,shared_devices(4); shared_payment_instruments(12); shared_residential_ip(3)
+FR_020,69.5,47,232,1800046.46,7,3,12,85,10,0.0,shared_devices(7); shared_payment_instruments(12); shared_residential_ip(3)
+FR_014,68.0,49,245,1895746.33,5,2,12,88,10,0.012,shared_devices(5); shared_payment_instruments(12); shared_residential_ip(2)
+FR_024,68.0,38,186,1190564.18,4,2,5,80,10,0.0,shared_devices(4); shared_payment_instruments(5); shared_residential_ip(2)

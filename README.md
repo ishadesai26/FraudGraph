@@ -40,24 +40,60 @@ FraudGraph enables risk teams to detect emerging fraud rings in real-time, expla
 ## 4. Planned Technology Stack
 
 - **Data Engineering & Analysis**: Python 3.12, Pandas, NumPy, Faker
-- **Graph Modeling & Ring Analysis**: NetworkX, Graph Querying Algorithms (planned for Phase 2)
-- **Machine Learning & Anomaly Detection**: Unsupervised & Graph ML (Isolation Forests, Graph Embeddings / GNN architectures) (planned for Phase 3)
-- **Backend API Service**: FastAPI, Pydantic, Uvicorn, SQLite/PostgreSQL (planned for Phase 4)
-- **Interactive UI / Forensic Dashboard**: React, Vite, Tailwind CSS, Graph Visualization (planned for Phase 5)
-- **Forensic Explanation & Integrations**: LLM-assisted forensic reporting and payment gateway simulation interfaces (planned for Phase 6)
+- **Graph Modeling & Ring Analysis**: NetworkX 3.6+, Louvain Modularity Community Detection, Multi-Signal Risk Scoring
+- **Machine Learning & Anomaly Detection**: Unsupervised & Graph ML (Isolation Forests, Graph Embeddings / GNN architectures) *(Phase 3)*
+- **Backend API Service**: FastAPI, Pydantic, Uvicorn, SQLite/PostgreSQL *(Phase 4)*
+- **Interactive UI / Forensic Dashboard**: React, Vite, Tailwind CSS, Graph Visualization (Cytoscape.js / D3.js) *(Phase 5)*
+- **Forensic Explanation & Integrations**: LLM-assisted forensic reporting and payment gateway simulation interfaces *(Phase 6)*
 
 ---
 
 ## 5. Six-Phase Development Roadmap
 
-| Phase | Milestone | Scope |
-| :--- | :--- | :--- |
-| **Phase 1** | **Project Foundation & Synthetic Fintech Dataset** | Setup architecture, modular foundation, synthetic fintech data generator with 7 injected fraud ring archetypes, dataset validation engine, and test suite. |
-| **Phase 2** | **Graph Engine & Ring Discovery** *(Upcoming)* | Heterogeneous graph construction, topological metrics, centrality analysis, community detection algorithms. |
-| **Phase 3** | **Machine Learning & Risk Intelligence** *(Upcoming)* | Anomaly detection, graph feature engineering, multi-layer risk scoring models. |
-| **Phase 4** | **Backend API & Service Architecture** *(Upcoming)* | High-performance RESTful APIs, transaction ingestion pipelines, real-time query endpoints. |
-| **Phase 5** | **Forensic Dashboard & Visualizer** *(Upcoming)* | Interactive web frontend, real-time graph rendering, investigation canvas, and risk alerts. |
-| **Phase 6** | **AI Forensic Copilot & Integration** *(Upcoming)* | Automated narrative investigation reports, payment simulation webhooks, end-to-end evaluation. |
+| Phase | Milestone | Status | Scope |
+| :--- | :--- | :--- | :--- |
+| **Phase 1** | **Project Foundation & Synthetic Fintech Dataset** | `COMPLETED` | Architecture, synthetic fintech dataset (2k customers, 10k transactions, 500 devices, 1k IPs, 500 PMs, 100 merchants), 7 injected fraud rings, validation engine, test suite. |
+| **Phase 2** | **Graph Construction & Fraud-Ring Detection** | `COMPLETED` | Heterogeneous graph (14.1k nodes, 90k edges), customer projection graph, graph features & centrality, Louvain community detection, multi-signal risk engine ($0-100$), export artifacts. |
+| **Phase 3** | **Machine Learning & Risk Intelligence** | `PLANNED` | Anomaly detection, graph feature engineering, multi-layer risk scoring models. |
+| **Phase 4** | **Backend API & Service Architecture** | `PLANNED` | High-performance RESTful APIs, transaction ingestion pipelines, real-time query endpoints. |
+| **Phase 5** | **Forensic Dashboard & Visualizer** | `PLANNED` | Interactive web frontend, real-time graph rendering, investigation canvas, and risk alerts. |
+| **Phase 6** | **AI Forensic Copilot & Integration** | `PLANNED` | Automated narrative investigation reports, payment simulation webhooks, end-to-end evaluation. |
+
+---
+
+## 6. Getting Started & Running FraudGraph
+
+### 1. Setup Environment
+```bash
+python -m venv .venv
+# On Windows PowerShell:
+.venv\Scripts\Activate.ps1
+# On Linux/macOS:
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### 2. Generate Synthetic Fintech Dataset (Phase 1)
+```bash
+python data/generate_data.py
+python data/validate_data.py
+```
+
+### 3. Run Graph Intelligence & Fraud-Ring Engine (Phase 2)
+```bash
+python -m backend.graph.run_pipeline
+```
+This builds the heterogeneous graph, calculates graph centrality & behavioral features, detects connected communities, executes multi-signal risk scoring, and exports:
+- `data/processed/fraud_rings.csv`
+- `data/processed/ring_members.csv`
+- `data/processed/graph_nodes.csv`
+- `data/processed/graph_edges.csv`
+
+### 4. Run Automated Test Suite
+```bash
+pytest -v
+```
 
 ---
 
