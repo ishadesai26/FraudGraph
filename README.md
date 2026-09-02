@@ -43,8 +43,9 @@ FraudGraph enables risk teams to detect emerging fraud rings in real-time, expla
 - **Graph Modeling & Ring Analysis**: NetworkX 3.6+, Louvain Modularity Community Detection, Multi-Signal Risk Scoring
 - **Machine Learning & Risk Engine**: Scikit-Learn (RandomForest, IsolationForest, RobustScaler, OneHotEncoder), Joblib, Matplotlib
 - **Explainable AI & Investigation Intelligence**: Two-layer deterministic evidence engine, timeline reconstruction, automated recommendation generator, Google Generative AI / Gemini SDK *(Phase 4)*
-- **Backend API Service**: FastAPI, Pydantic, Uvicorn, SQLite/PostgreSQL *(Phase 5)*
-- **Interactive UI / Forensic Dashboard**: React, Vite, Tailwind CSS, Graph Visualization (Cytoscape.js / D3.js) *(Phase 6)*
+- **Backend API Service**: FastAPI, Pydantic, Uvicorn, Lifespan In-Memory Data Repository *(Phase 5)*
+- **Interactive UI / Forensic Dashboard**: React 18, Vite, React Router v6, Cytoscape.js, Lucide Icons *(Phase 5)*
+- **Forensic Copilot & Production Integrations**: AI narrative copilot & payment gateway webhooks *(Phase 6)*
 
 ---
 
@@ -56,8 +57,8 @@ FraudGraph enables risk teams to detect emerging fraud rings in real-time, expla
 | **Phase 2** | **Graph Construction & Fraud-Ring Detection** | `COMPLETED` | Heterogeneous graph (14.1k nodes, 90k edges), customer projection graph, graph features & centrality, Louvain community detection, multi-signal risk engine ($0-100$), export artifacts. |
 | **Phase 3** | **Machine Learning Risk Engine & Model Evaluation** | `COMPLETED` | Transaction/behavioral baseline, unsupervised IsolationForest anomaly detector, graph-enhanced RandomForest classifier, multi-factor composite risk scorer ($0-100$), time-aware split, threshold analysis, evaluation visualizations. |
 | **Phase 4** | **Explainable AI & Fraud Investigation Intelligence** | `COMPLETED` | Two-layer XAI architecture, deterministic Layer 1 evidence engine, feature attribution, graph network tracing, chronological timeline reconstruction, investigator recommendations, searchable index, report generator, isolated LLM explainer. |
-| **Phase 5** | **Backend API & Service Architecture** | `PLANNED` | High-performance RESTful APIs, transaction ingestion pipelines, real-time query endpoints. |
-| **Phase 6** | **Forensic Dashboard & Forensic Copilot** | `PLANNED` | Interactive web frontend, real-time graph rendering, investigation canvas, and narrative copilots. |
+| **Phase 5** | **Interactive Fraud Investigation Application** | `COMPLETED` | FastAPI REST backend, React + Vite frontend, interactive Cytoscape.js network visualizer, customer & syndicate search, timeline viewer, 13 automated API tests. |
+| **Phase 6** | **Forensic Copilot & Payment Gateway Webhooks** | `PLANNED` | Automated multi-agent forensic report copilots, payment gateway webhook simulation interfaces, end-to-end evaluation. |
 
 ---
 
@@ -84,11 +85,6 @@ python data/validate_data.py
 ```bash
 python -m backend.graph.run_pipeline
 ```
-This builds the heterogeneous graph, calculates graph centrality & behavioral features, detects connected communities, executes multi-signal risk scoring, and exports:
-- `data/processed/fraud_rings.csv`
-- `data/processed/ring_members.csv`
-- `data/processed/graph_nodes.csv`
-- `data/processed/graph_edges.csv`
 
 ### 4. Train & Evaluate ML Risk Engine (Phase 3)
 ```bash
@@ -98,22 +94,27 @@ python -m backend.ml.train
 # Evaluate on Held-Out Test Set and Generate Visual Charts:
 python -m backend.ml.evaluate
 ```
-This exports:
-- `backend/ml/artifacts/*.joblib` (Trained model pipelines)
-- `data/processed/model_metrics.json` (Comparative performance metrics)
-- `data/processed/feature_importance.json` (Feature ranking breakdown)
-- `data/processed/evaluation/` (ROC, PR curves, Confusion matrices, Feature importance chart)
 
 ### 5. Run Investigation Intelligence & Generate Forensic Reports (Phase 4)
 ```bash
 python -m backend.explainability.investigation_engine
 ```
-This generates:
-- `data/processed/investigation_index.json` (Fast searchable index for 2,005 entities)
-- `data/processed/investigation_summary.json` (Executive investigation summary)
-- `data/processed/investigation_reports/*.json` (Individual forensic dossiers for rings & high-risk entities)
 
-### 6. Run Automated Test Suite (Phases 1, 2, 3, and 4)
+### 6. Start FastAPI Backend Server (Phase 5)
+```bash
+python -m uvicorn backend.api.main:app --host 127.0.0.1 --port 8000 --reload
+```
+Interactive API docs available at: `http://127.0.0.1:8000/docs`
+
+### 7. Start React + Vite Frontend (Phase 5)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open your browser at `http://localhost:5173` to explore the Interactive Forensic Investigation Console.
+
+### 8. Run Complete Automated Test Suite (Phases 1–5)
 ```bash
 pytest -v
 ```
