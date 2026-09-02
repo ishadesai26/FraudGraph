@@ -1,0 +1,204 @@
+{
+  "investigation_id": "INV_TRANSACTION_SIM_BAF23618",
+  "timestamp": "2026-09-02 20:04:43",
+  "entity_type": "transaction",
+  "entity_id": "SIM_BAF23618",
+  "risk_score": 38.1,
+  "risk_level": "ENHANCED_REVIEW",
+  "decision": {
+    "status": "ENHANCED_REVIEW",
+    "risk_score": 38.1,
+    "confidence": "MEDIUM",
+    "evidence_coverage": 90.0,
+    "reasoning": "Elevated risk indicators detected (Score: 38.1/100). Supported by 1 high-severity finding(s), warranting proactive step-up verification.",
+    "recommended_action": "Apply step-up identity authentication and place account under temporary 48-hour velocity monitoring.",
+    "recommended_actions": [
+      "Apply step-up identity authentication and place account under temporary 48-hour velocity monitoring.",
+      "Conduct comprehensive cross-account ledger audit across all accounts associated with syndicate 'FR_001'."
+    ]
+  },
+  "key_findings": [
+    "Syndicate Ring Membership: Identified as member of coordinated syndicate 'FR_001' with role 'MEMBER'."
+  ],
+  "evidence_items": [
+    {
+      "signal": "syndicate_ring_membership",
+      "source_agent": "GraphAgent",
+      "severity": "HIGH",
+      "value": "FR_001",
+      "importance": 0.4,
+      "description": "Identified as member of coordinated syndicate 'FR_001' with role 'MEMBER'.",
+      "category": "GRAPH_TOPOLOGY"
+    },
+    {
+      "signal": "established_account_tenure",
+      "source_agent": "BehaviorAgent",
+      "severity": "LOW",
+      "value": 439,
+      "importance": 0.15,
+      "description": "Established account tenure of 439 days with consistent operating history.",
+      "category": "PROTECTIVE"
+    }
+  ],
+  "conflicts": [],
+  "entities_to_review": [
+    {
+      "entity_id": "CUST_00587",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    },
+    {
+      "entity_id": "CUST_01043",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    },
+    {
+      "entity_id": "CUST_00920",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    }
+  ],
+  "network_context": {
+    "network_risk_score": 71.0,
+    "ring_id": "FR_001",
+    "shared_devices_count": 0,
+    "shared_payments_count": 0
+  },
+  "behavior_context": {
+    "behavior_risk_level": "LOW",
+    "burst_count": 0,
+    "total_transactions": 2,
+    "total_spend": 1612.3899999999999
+  },
+  "evidence_graph": {
+    "nodes": [
+      {
+        "id": "SIM_BAF23618",
+        "label": "SIM_BAF23618",
+        "type": "transaction",
+        "subtext": "Target Transaction",
+        "severity": null
+      },
+      {
+        "id": "DECISION_ENHANCED_REVIEW",
+        "label": "ENHANCED REVIEW",
+        "type": "decision",
+        "subtext": "Investigation Disposition",
+        "severity": null
+      },
+      {
+        "id": "SIG_0_syndicate_ring_membership",
+        "label": "syndicate ring membership",
+        "type": "signal",
+        "subtext": "Source: GraphAgent",
+        "severity": "HIGH"
+      },
+      {
+        "id": "SIG_1_established_account_tenure",
+        "label": "established account tenure",
+        "type": "signal",
+        "subtext": "Source: BehaviorAgent",
+        "severity": "LOW"
+      },
+      {
+        "id": "FR_001",
+        "label": "FR_001",
+        "type": "fraud_ring",
+        "subtext": "Syndicate Community",
+        "severity": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "e_SIM_BAF23618_DECISION_ENHANCED_REVIEW_RESULTS_IN",
+        "source": "SIM_BAF23618",
+        "target": "DECISION_ENHANCED_REVIEW",
+        "type": "RESULTS_IN",
+        "label": "RESULTS_IN"
+      },
+      {
+        "id": "e_SIM_BAF23618_SIG_0_syndicate_ring_membership_SUPPORTED_BY",
+        "source": "SIM_BAF23618",
+        "target": "SIG_0_syndicate_ring_membership",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_0_syndicate_ring_membership_DECISION_ENHANCED_REVIEW_CONTRIBUTES_TO",
+        "source": "SIG_0_syndicate_ring_membership",
+        "target": "DECISION_ENHANCED_REVIEW",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_BAF23618_SIG_1_established_account_tenure_SUPPORTED_BY",
+        "source": "SIM_BAF23618",
+        "target": "SIG_1_established_account_tenure",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_1_established_account_tenure_DECISION_ENHANCED_REVIEW_CONTRIBUTES_TO",
+        "source": "SIG_1_established_account_tenure",
+        "target": "DECISION_ENHANCED_REVIEW",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_BAF23618_FR_001_PART_OF",
+        "source": "SIM_BAF23618",
+        "target": "FR_001",
+        "type": "PART_OF",
+        "label": "PART_OF"
+      }
+    ]
+  },
+  "agent_trace": [
+    {
+      "agent_name": "RiskAgent",
+      "status": "completed",
+      "duration_ms": 0.01,
+      "signals_found": 0,
+      "summary": "RiskAgent evaluated ML models: Composite Score 38.1 (LOW), Supervised Prob 35.6%, Anomaly Score 10.0."
+    },
+    {
+      "agent_name": "GraphAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 1,
+      "summary": "GraphAgent evaluated topology: Network Risk 71.0 (MEDIUM), 0 Shared Devices, 0 Shared Cards, Ring: FR_001."
+    },
+    {
+      "agent_name": "BehaviorAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 1,
+      "summary": "BehaviorAgent evaluated transaction profile: 2 txns, \u20b91,612.39 spend, 0 burst sync events, max txn \u20b91,450.00 (LOW risk)."
+    },
+    {
+      "agent_name": "EvidenceAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 2,
+      "summary": "EvidenceAgent correlated 2 signals across 3 agents (Coverage: 90.0%, 0 conflict(s) detected)."
+    },
+    {
+      "agent_name": "InvestigatorAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 0,
+      "summary": "InvestigatorAgent generated 1 key findings and 1 investigative checks."
+    },
+    {
+      "agent_name": "DecisionAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 0,
+      "summary": "DecisionAgent ruled ENHANCED_REVIEW (Risk: 38.1, Confidence: MEDIUM, Coverage: 90.0%)."
+    }
+  ],
+  "narrative_summary": "### Multi-Agent Forensic Investigation Summary for Transaction SIM_BAF23618\n\n**Final Disposition:** ENHANCED_REVIEW (Composite Risk: 38.1/100, Confidence: MEDIUM, Evidence Coverage: 90.0%)\n\n**Executive Reasoning:**\nElevated risk indicators detected (Score: 38.1/100). Supported by 1 high-severity finding(s), warranting proactive step-up verification.\n\n**Key Investigative Findings:**\n- Syndicate Ring Membership: Identified as member of coordinated syndicate 'FR_001' with role 'MEMBER'.\n\n\n**Recommended Action:**\nApply step-up identity authentication and place account under temporary 48-hour velocity monitoring."
+}

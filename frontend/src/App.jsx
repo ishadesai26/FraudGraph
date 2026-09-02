@@ -8,6 +8,8 @@ import CustomerDetailPage from './pages/CustomerDetailPage';
 import FraudRingsPage from './pages/FraudRingsPage';
 import FraudRingDetailPage from './pages/FraudRingDetailPage';
 import TransactionDetailPage from './pages/TransactionDetailPage';
+import AgentInvestigationPage from './pages/AgentInvestigationPage';
+import SimulationPage from './pages/SimulationPage';
 
 export function App() {
   return (
@@ -24,6 +26,8 @@ export function App() {
               <Route path="/fraud-rings" element={<FraudRingsPage />} />
               <Route path="/fraud-rings/:ringId" element={<FraudRingDetailPage />} />
               <Route path="/transactions/:transactionId" element={<TransactionDetailPage />} />
+              <Route path="/agents" element={<AgentInvestigationPage />} />
+              <Route path="/simulation" element={<SimulationPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>

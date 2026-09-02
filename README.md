@@ -45,7 +45,7 @@ FraudGraph enables risk teams to detect emerging fraud rings in real-time, expla
 - **Explainable AI & Investigation Intelligence**: Two-layer deterministic evidence engine, timeline reconstruction, automated recommendation generator, Google Generative AI / Gemini SDK *(Phase 4)*
 - **Backend API Service**: FastAPI, Pydantic, Uvicorn, Lifespan In-Memory Data Repository *(Phase 5)*
 - **Interactive UI / Forensic Dashboard**: React 18, Vite, React Router v6, Cytoscape.js, Lucide Icons *(Phase 5)*
-- **Forensic Copilot & Production Integrations**: AI narrative copilot & payment gateway webhooks *(Phase 6)*
+- **Multi-Agent Collaborative Engine & Real-Time Simulator**: 6 specialized AI agents (`Risk`, `Graph`, `Behavior`, `Evidence`, `Investigator`, `Decision`), conflict adjudication, evidence coverage scoring, and 6 demo scenarios *(Phase 6)*
 
 ---
 
@@ -58,7 +58,7 @@ FraudGraph enables risk teams to detect emerging fraud rings in real-time, expla
 | **Phase 3** | **Machine Learning Risk Engine & Model Evaluation** | `COMPLETED` | Transaction/behavioral baseline, unsupervised IsolationForest anomaly detector, graph-enhanced RandomForest classifier, multi-factor composite risk scorer ($0-100$), time-aware split, threshold analysis, evaluation visualizations. |
 | **Phase 4** | **Explainable AI & Fraud Investigation Intelligence** | `COMPLETED` | Two-layer XAI architecture, deterministic Layer 1 evidence engine, feature attribution, graph network tracing, chronological timeline reconstruction, investigator recommendations, searchable index, report generator, isolated LLM explainer. |
 | **Phase 5** | **Interactive Fraud Investigation Application** | `COMPLETED` | FastAPI REST backend, React + Vite frontend, interactive Cytoscape.js network visualizer, customer & syndicate search, timeline viewer, 13 automated API tests. |
-| **Phase 6** | **Forensic Copilot & Payment Gateway Webhooks** | `PLANNED` | Automated multi-agent forensic report copilots, payment gateway webhook simulation interfaces, end-to-end evaluation. |
+| **Phase 6** | **Agentic Investigation & Real-Time Risk Simulation** | `COMPLETED` | 6-agent collaborative pipeline, transparent execution trace, conflict adjudication, evidence coverage (0-100%), real-time transaction simulator, 14 automated tests (72 total tests). |
 
 ---
 
@@ -100,21 +100,26 @@ python -m backend.ml.evaluate
 python -m backend.explainability.investigation_engine
 ```
 
-### 6. Start FastAPI Backend Server (Phase 5)
+### 6. Start FastAPI Backend Server (Phase 5 & 6)
 ```bash
 python -m uvicorn backend.api.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 Interactive API docs available at: `http://127.0.0.1:8000/docs`
 
-### 7. Start React + Vite Frontend (Phase 5)
+### 7. Start React + Vite Frontend (Phase 5 & 6)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Open your browser at `http://localhost:5173` to explore the Interactive Forensic Investigation Console.
+Open your browser at `http://localhost:5173` to explore:
+- **Investigation Dashboard**: `/`
+- **Customer Dossiers**: `/customers`
+- **Syndicate Rings**: `/fraud-rings`
+- **Agent Investigation Console**: `/agents`
+- **Live Transaction Simulator**: `/simulation`
 
-### 8. Run Complete Automated Test Suite (Phases 1–5)
+### 8. Run Complete Automated Test Suite (Phases 1–6)
 ```bash
 pytest -v
 ```

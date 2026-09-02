@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, Network, ShieldCheck, FileText, Activity } from 'lucide-react';
+import { LayoutDashboard, Users, Network, Bot, Zap, Activity } from 'lucide-react';
 
 export function Sidebar() {
   const navItems = [
     { to: '/', label: 'Investigation Dashboard', icon: LayoutDashboard, exact: true },
     { to: '/customers', label: 'Suspicious Customers', icon: Users },
     { to: '/fraud-rings', label: 'Fraud Rings & Syndicates', icon: Network },
+    { to: '/agents', label: 'Agent Investigation', icon: Bot },
+    { to: '/simulation', label: 'Live Risk Simulator', icon: Zap },
   ];
 
   return (
@@ -46,7 +48,7 @@ export function Sidebar() {
               Pipeline Matrix
             </span>
             <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded border border-emerald-500/20 font-mono">
-              v1.0
+              Phases 1-6
             </span>
           </div>
           <div className="space-y-1 text-[11px] text-slate-400">
@@ -63,8 +65,16 @@ export function Sidebar() {
               <span className="text-emerald-400 font-mono font-medium">99.8% AUC</span>
             </div>
             <div className="flex justify-between items-center py-0.5">
-              <span>Phase 4 XAI Engine</span>
+              <span>Phase 4 Explainability</span>
               <span className="text-emerald-400 font-mono font-medium">Deterministic</span>
+            </div>
+            <div className="flex justify-between items-center py-0.5">
+              <span>Phase 5 REST & UI</span>
+              <span className="text-emerald-400 font-mono font-medium">FastAPI + React</span>
+            </div>
+            <div className="flex justify-between items-center py-0.5">
+              <span>Phase 6 Multi-Agent</span>
+              <span className="text-emerald-400 font-mono font-medium">6 Agents + Sim</span>
             </div>
           </div>
         </div>

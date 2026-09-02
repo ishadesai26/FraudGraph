@@ -1,0 +1,336 @@
+{
+  "investigation_id": "INV_TRANSACTION_SIM_0D6FEE66",
+  "timestamp": "2026-09-02 20:11:33",
+  "entity_type": "transaction",
+  "entity_id": "SIM_0D6FEE66",
+  "risk_score": 91.6,
+  "risk_level": "HIGH_RISK",
+  "decision": {
+    "status": "HIGH_RISK",
+    "risk_score": 91.6,
+    "confidence": "HIGH",
+    "evidence_coverage": 100.0,
+    "reasoning": "Multi-agent consensus established severe fraud risk (Score: 91.6/100). Corroborated by 2 critical and 3 high-severity signal(s) across ML models and graph linkages.",
+    "recommended_action": "Initiate immediate transaction hold and escalate for senior fraud operations review.",
+    "recommended_actions": [
+      "Initiate immediate transaction hold and escalate for senior fraud operations review.",
+      "Conduct comprehensive cross-account ledger audit across all accounts associated with syndicate 'FR_015'."
+    ]
+  },
+  "key_findings": [
+    "Supervised Ml High Confidence Fraud: Graph-enhanced RandomForest fraud classifier estimated a 99.8% fraud probability.",
+    "Syndicate Ring Membership: Identified as member of coordinated syndicate 'FR_015' with role 'MEMBER'.",
+    "High Graph Structural Risk: Graph centrality and multi-entity clustering score is exceptionally elevated (97.0/100).",
+    "High Value Transaction Spike: Encountered unusual high-value transaction peak of \u20b984,221.34 (Average: \u20b930,507.94)."
+  ],
+  "evidence_items": [
+    {
+      "signal": "supervised_ml_high_confidence_fraud",
+      "source_agent": "RiskAgent",
+      "severity": "CRITICAL",
+      "value": 0.998,
+      "importance": 0.45,
+      "description": "Graph-enhanced RandomForest fraud classifier estimated a 99.8% fraud probability.",
+      "category": "ML_MODEL"
+    },
+    {
+      "signal": "syndicate_ring_membership",
+      "source_agent": "GraphAgent",
+      "severity": "CRITICAL",
+      "value": "FR_015",
+      "importance": 0.4,
+      "description": "Identified as member of coordinated syndicate 'FR_015' with role 'MEMBER'.",
+      "category": "GRAPH_TOPOLOGY"
+    },
+    {
+      "signal": "high_graph_structural_risk",
+      "source_agent": "GraphAgent",
+      "severity": "HIGH",
+      "value": 97.0,
+      "importance": 0.3,
+      "description": "Graph centrality and multi-entity clustering score is exceptionally elevated (97.0/100).",
+      "category": "GRAPH_TOPOLOGY"
+    },
+    {
+      "signal": "high_value_transaction_spike",
+      "source_agent": "BehaviorAgent",
+      "severity": "HIGH",
+      "value": 84221.34,
+      "importance": 0.3,
+      "description": "Encountered unusual high-value transaction peak of \u20b984,221.34 (Average: \u20b930,507.94).",
+      "category": "BEHAVIORAL_HISTORY"
+    },
+    {
+      "signal": "network_feature_model_uplift",
+      "source_agent": "RiskAgent",
+      "severity": "HIGH",
+      "value": 0.2495,
+      "importance": 0.25,
+      "description": "Network topology features elevated fraud probability by +25.0% above isolated behavioral baseline.",
+      "category": "ML_MODEL"
+    },
+    {
+      "signal": "unsupervised_moderate_deviation",
+      "source_agent": "RiskAgent",
+      "severity": "MEDIUM",
+      "value": 70.0,
+      "importance": 0.2,
+      "description": "Unsupervised anomaly detector noted moderate deviation (Score: 70.0/100).",
+      "category": "ML_MODEL"
+    },
+    {
+      "signal": "established_account_tenure",
+      "source_agent": "BehaviorAgent",
+      "severity": "LOW",
+      "value": 1004,
+      "importance": 0.15,
+      "description": "Established account tenure of 1004 days with consistent operating history.",
+      "category": "PROTECTIVE"
+    }
+  ],
+  "conflicts": [],
+  "entities_to_review": [
+    {
+      "entity_id": "CUST_00075",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    },
+    {
+      "entity_id": "CUST_00089",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    },
+    {
+      "entity_id": "CUST_00966",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    }
+  ],
+  "network_context": {
+    "network_risk_score": 96.95,
+    "ring_id": "FR_015",
+    "shared_devices_count": 0,
+    "shared_payments_count": 0
+  },
+  "behavior_context": {
+    "behavior_risk_level": "HIGH",
+    "burst_count": 1,
+    "total_transactions": 16,
+    "total_spend": 533216.9299999999
+  },
+  "evidence_graph": {
+    "nodes": [
+      {
+        "id": "SIM_0D6FEE66",
+        "label": "SIM_0D6FEE66",
+        "type": "transaction",
+        "subtext": "Target Transaction",
+        "severity": null
+      },
+      {
+        "id": "DECISION_HIGH_RISK",
+        "label": "HIGH RISK",
+        "type": "decision",
+        "subtext": "Investigation Disposition",
+        "severity": null
+      },
+      {
+        "id": "SIG_0_supervised_ml_high_confidence_fraud",
+        "label": "supervised ml high confidence fraud",
+        "type": "signal",
+        "subtext": "Source: RiskAgent",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "SIG_1_syndicate_ring_membership",
+        "label": "syndicate ring membership",
+        "type": "signal",
+        "subtext": "Source: GraphAgent",
+        "severity": "CRITICAL"
+      },
+      {
+        "id": "SIG_2_high_graph_structural_risk",
+        "label": "high graph structural risk",
+        "type": "signal",
+        "subtext": "Source: GraphAgent",
+        "severity": "HIGH"
+      },
+      {
+        "id": "SIG_3_high_value_transaction_spike",
+        "label": "high value transaction spike",
+        "type": "signal",
+        "subtext": "Source: BehaviorAgent",
+        "severity": "HIGH"
+      },
+      {
+        "id": "SIG_4_network_feature_model_uplift",
+        "label": "network feature model uplift",
+        "type": "signal",
+        "subtext": "Source: RiskAgent",
+        "severity": "HIGH"
+      },
+      {
+        "id": "SIG_5_unsupervised_moderate_deviation",
+        "label": "unsupervised moderate deviation",
+        "type": "signal",
+        "subtext": "Source: RiskAgent",
+        "severity": "MEDIUM"
+      },
+      {
+        "id": "FR_015",
+        "label": "FR_015",
+        "type": "fraud_ring",
+        "subtext": "Syndicate Community",
+        "severity": null
+      }
+    ],
+    "edges": [
+      {
+        "id": "e_SIM_0D6FEE66_DECISION_HIGH_RISK_RESULTS_IN",
+        "source": "SIM_0D6FEE66",
+        "target": "DECISION_HIGH_RISK",
+        "type": "RESULTS_IN",
+        "label": "RESULTS_IN"
+      },
+      {
+        "id": "e_SIM_0D6FEE66_SIG_0_supervised_ml_high_confidence_fraud_SUPPORTED_BY",
+        "source": "SIM_0D6FEE66",
+        "target": "SIG_0_supervised_ml_high_confidence_fraud",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_0_supervised_ml_high_confidence_fraud_DECISION_HIGH_RISK_CONTRIBUTES_TO",
+        "source": "SIG_0_supervised_ml_high_confidence_fraud",
+        "target": "DECISION_HIGH_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_0D6FEE66_SIG_1_syndicate_ring_membership_SUPPORTED_BY",
+        "source": "SIM_0D6FEE66",
+        "target": "SIG_1_syndicate_ring_membership",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_1_syndicate_ring_membership_DECISION_HIGH_RISK_CONTRIBUTES_TO",
+        "source": "SIG_1_syndicate_ring_membership",
+        "target": "DECISION_HIGH_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_0D6FEE66_SIG_2_high_graph_structural_risk_SUPPORTED_BY",
+        "source": "SIM_0D6FEE66",
+        "target": "SIG_2_high_graph_structural_risk",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_2_high_graph_structural_risk_DECISION_HIGH_RISK_CONTRIBUTES_TO",
+        "source": "SIG_2_high_graph_structural_risk",
+        "target": "DECISION_HIGH_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_0D6FEE66_SIG_3_high_value_transaction_spike_SUPPORTED_BY",
+        "source": "SIM_0D6FEE66",
+        "target": "SIG_3_high_value_transaction_spike",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_3_high_value_transaction_spike_DECISION_HIGH_RISK_CONTRIBUTES_TO",
+        "source": "SIG_3_high_value_transaction_spike",
+        "target": "DECISION_HIGH_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_0D6FEE66_SIG_4_network_feature_model_uplift_SUPPORTED_BY",
+        "source": "SIM_0D6FEE66",
+        "target": "SIG_4_network_feature_model_uplift",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_4_network_feature_model_uplift_DECISION_HIGH_RISK_CONTRIBUTES_TO",
+        "source": "SIG_4_network_feature_model_uplift",
+        "target": "DECISION_HIGH_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_0D6FEE66_SIG_5_unsupervised_moderate_deviation_SUPPORTED_BY",
+        "source": "SIM_0D6FEE66",
+        "target": "SIG_5_unsupervised_moderate_deviation",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_5_unsupervised_moderate_deviation_DECISION_HIGH_RISK_CONTRIBUTES_TO",
+        "source": "SIG_5_unsupervised_moderate_deviation",
+        "target": "DECISION_HIGH_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_0D6FEE66_FR_015_PART_OF",
+        "source": "SIM_0D6FEE66",
+        "target": "FR_015",
+        "type": "PART_OF",
+        "label": "PART_OF"
+      }
+    ]
+  },
+  "agent_trace": [
+    {
+      "agent_name": "RiskAgent",
+      "status": "completed",
+      "duration_ms": 0.04,
+      "signals_found": 3,
+      "summary": "RiskAgent evaluated ML models: Composite Score 91.6 (CRITICAL), Supervised Prob 99.8%, Anomaly Score 70.0."
+    },
+    {
+      "agent_name": "GraphAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 2,
+      "summary": "GraphAgent evaluated topology: Network Risk 97.0 (CRITICAL), 0 Shared Devices, 0 Shared Cards, Ring: FR_015."
+    },
+    {
+      "agent_name": "BehaviorAgent",
+      "status": "completed",
+      "duration_ms": 0.03,
+      "signals_found": 2,
+      "summary": "BehaviorAgent evaluated transaction profile: 16 txns, \u20b9533,216.93 spend, 1 burst sync events, max txn \u20b984,221.34 (HIGH risk)."
+    },
+    {
+      "agent_name": "EvidenceAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 7,
+      "summary": "EvidenceAgent correlated 7 signals across 3 agents (Coverage: 100.0%, 0 conflict(s) detected)."
+    },
+    {
+      "agent_name": "InvestigatorAgent",
+      "status": "completed",
+      "duration_ms": 0.2,
+      "signals_found": 0,
+      "summary": "InvestigatorAgent generated 4 key findings and 1 investigative checks."
+    },
+    {
+      "agent_name": "DecisionAgent",
+      "status": "completed",
+      "duration_ms": 0.03,
+      "signals_found": 0,
+      "summary": "DecisionAgent ruled HIGH_RISK (Risk: 91.6, Confidence: HIGH, Coverage: 100.0%)."
+    }
+  ],
+  "narrative_summary": "### Multi-Agent Forensic Investigation Summary for Transaction SIM_0D6FEE66\n\n**Final Disposition:** HIGH_RISK (Composite Risk: 91.6/100, Confidence: HIGH, Evidence Coverage: 100.0%)\n\n**Executive Reasoning:**\nMulti-agent consensus established severe fraud risk (Score: 91.6/100). Corroborated by 2 critical and 3 high-severity signal(s) across ML models and graph linkages.\n\n**Key Investigative Findings:**\n- Supervised Ml High Confidence Fraud: Graph-enhanced RandomForest fraud classifier estimated a 99.8% fraud probability.\n- Syndicate Ring Membership: Identified as member of coordinated syndicate 'FR_015' with role 'MEMBER'.\n- High Graph Structural Risk: Graph centrality and multi-entity clustering score is exceptionally elevated (97.0/100).\n- High Value Transaction Spike: Encountered unusual high-value transaction peak of \u20b984,221.34 (Average: \u20b930,507.94).\n\n\n**Recommended Action:**\nInitiate immediate transaction hold and escalate for senior fraud operations review."
+}

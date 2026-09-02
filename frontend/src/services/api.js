@@ -1,5 +1,5 @@
 /**
- * Centralized API Service for FraudGraph Frontend.
+ * Centralized API Service for FraudGraph Frontend (Phases 1-6).
  */
 
 const API_BASE_URL = '/api';
@@ -76,6 +76,27 @@ export const apiService = {
   /** Cytoscape network graph */
   getNetwork: (entityType, entityId) =>
     request(`/network/${encodeURIComponent(entityType)}/${encodeURIComponent(entityId)}`),
+
+  /** Phase 6: Multi-Agent Collaborative Investigation */
+  investigateWithAgents: (entityType, entityId) =>
+    request('/agents/investigate', {
+      method: 'POST',
+      body: JSON.stringify({ entity_type: entityType, entity_id: entityId }),
+    }),
+
+  /** Phase 6: Load Saved Investigation */
+  getSavedInvestigation: (investigationId) =>
+    request(`/agents/investigation/${encodeURIComponent(investigationId)}`),
+
+  /** Phase 6: Get Simulation Scenarios */
+  getSimulationScenarios: () => request('/simulation/scenarios'),
+
+  /** Phase 6: Simulate and Score Real-Time Transaction */
+  simulateAndAnalyze: (payload) =>
+    request('/simulation/analyze', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }),
 };
 
 export default apiService;

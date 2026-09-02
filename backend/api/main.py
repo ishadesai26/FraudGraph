@@ -16,6 +16,8 @@ from backend.api.routes import (
     fraud_rings_router,
     investigation_router,
     network_router,
+    agents_router,
+    simulation_router,
 )
 from backend.api.data_service import DataService
 
@@ -66,6 +68,8 @@ app.include_router(transactions_router, prefix="/api")
 app.include_router(fraud_rings_router, prefix="/api")
 app.include_router(investigation_router, prefix="/api")
 app.include_router(network_router, prefix="/api")
+app.include_router(agents_router)
+app.include_router(simulation_router)
 
 
 @app.exception_handler(HTTPException)

@@ -1,0 +1,220 @@
+{
+  "investigation_id": "INV_TRANSACTION_SIM_ABE96A73",
+  "timestamp": "2026-09-02 20:11:33",
+  "entity_type": "transaction",
+  "entity_id": "SIM_ABE96A73",
+  "risk_score": 24.8,
+  "risk_level": "LOW_RISK",
+  "decision": {
+    "status": "LOW_RISK",
+    "risk_score": 24.8,
+    "confidence": "HIGH",
+    "evidence_coverage": 90.0,
+    "reasoning": "Low composite risk (Score: 24.8/100) with clean behavioral baseline and no coordinated graph collusion.",
+    "recommended_action": "No intervention required; permit standard transaction processing.",
+    "recommended_actions": [
+      "No intervention required; permit standard transaction processing.",
+      "Standard periodic monitoring; maintain normal transaction verification rules."
+    ]
+  },
+  "key_findings": [
+    "No critical or high-severity risk signals identified across behavioral or network profiles."
+  ],
+  "evidence_items": [
+    {
+      "signal": "supervised_ml_clean_baseline",
+      "source_agent": "RiskAgent",
+      "severity": "LOW",
+      "value": 0.09,
+      "importance": 0.2,
+      "description": "Supervised model assigned a low fraud probability of 9.0%.",
+      "category": "PROTECTIVE"
+    },
+    {
+      "signal": "isolated_graph_topology",
+      "source_agent": "GraphAgent",
+      "severity": "LOW",
+      "value": 0,
+      "importance": 0.2,
+      "description": "No shared hardware devices or payment instruments detected in graph topology.",
+      "category": "PROTECTIVE"
+    },
+    {
+      "signal": "established_account_tenure",
+      "source_agent": "BehaviorAgent",
+      "severity": "LOW",
+      "value": 439,
+      "importance": 0.15,
+      "description": "Established account tenure of 439 days with consistent operating history.",
+      "category": "PROTECTIVE"
+    }
+  ],
+  "conflicts": [],
+  "entities_to_review": [
+    {
+      "entity_id": "CUST_01043",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    },
+    {
+      "entity_id": "CUST_00920",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    },
+    {
+      "entity_id": "CUST_01566",
+      "type": "customer",
+      "reason": "Co-transacting or shared infrastructure neighbor (shared linkage).",
+      "priority": "MEDIUM"
+    }
+  ],
+  "network_context": {
+    "network_risk_score": 0.0,
+    "ring_id": null,
+    "shared_devices_count": 0,
+    "shared_payments_count": 0
+  },
+  "behavior_context": {
+    "behavior_risk_level": "LOW",
+    "burst_count": 0,
+    "total_transactions": 2,
+    "total_spend": 1612.3899999999999
+  },
+  "evidence_graph": {
+    "nodes": [
+      {
+        "id": "SIM_ABE96A73",
+        "label": "SIM_ABE96A73",
+        "type": "transaction",
+        "subtext": "Target Transaction",
+        "severity": null
+      },
+      {
+        "id": "DECISION_LOW_RISK",
+        "label": "LOW RISK",
+        "type": "decision",
+        "subtext": "Investigation Disposition",
+        "severity": null
+      },
+      {
+        "id": "SIG_0_supervised_ml_clean_baseline",
+        "label": "supervised ml clean baseline",
+        "type": "signal",
+        "subtext": "Source: RiskAgent",
+        "severity": "LOW"
+      },
+      {
+        "id": "SIG_1_isolated_graph_topology",
+        "label": "isolated graph topology",
+        "type": "signal",
+        "subtext": "Source: GraphAgent",
+        "severity": "LOW"
+      },
+      {
+        "id": "SIG_2_established_account_tenure",
+        "label": "established account tenure",
+        "type": "signal",
+        "subtext": "Source: BehaviorAgent",
+        "severity": "LOW"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e_SIM_ABE96A73_DECISION_LOW_RISK_RESULTS_IN",
+        "source": "SIM_ABE96A73",
+        "target": "DECISION_LOW_RISK",
+        "type": "RESULTS_IN",
+        "label": "RESULTS_IN"
+      },
+      {
+        "id": "e_SIM_ABE96A73_SIG_0_supervised_ml_clean_baseline_SUPPORTED_BY",
+        "source": "SIM_ABE96A73",
+        "target": "SIG_0_supervised_ml_clean_baseline",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_0_supervised_ml_clean_baseline_DECISION_LOW_RISK_CONTRIBUTES_TO",
+        "source": "SIG_0_supervised_ml_clean_baseline",
+        "target": "DECISION_LOW_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_ABE96A73_SIG_1_isolated_graph_topology_SUPPORTED_BY",
+        "source": "SIM_ABE96A73",
+        "target": "SIG_1_isolated_graph_topology",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_1_isolated_graph_topology_DECISION_LOW_RISK_CONTRIBUTES_TO",
+        "source": "SIG_1_isolated_graph_topology",
+        "target": "DECISION_LOW_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_SIM_ABE96A73_SIG_2_established_account_tenure_SUPPORTED_BY",
+        "source": "SIM_ABE96A73",
+        "target": "SIG_2_established_account_tenure",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_2_established_account_tenure_DECISION_LOW_RISK_CONTRIBUTES_TO",
+        "source": "SIG_2_established_account_tenure",
+        "target": "DECISION_LOW_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      }
+    ]
+  },
+  "agent_trace": [
+    {
+      "agent_name": "RiskAgent",
+      "status": "completed",
+      "duration_ms": 0.05,
+      "signals_found": 1,
+      "summary": "RiskAgent evaluated ML models: Composite Score 24.8 (LOW), Supervised Prob 9.0%, Anomaly Score 10.0."
+    },
+    {
+      "agent_name": "GraphAgent",
+      "status": "completed",
+      "duration_ms": 0.01,
+      "signals_found": 1,
+      "summary": "GraphAgent evaluated topology: Network Risk 0.0 (LOW), 0 Shared Devices, 0 Shared Cards, Ring: None."
+    },
+    {
+      "agent_name": "BehaviorAgent",
+      "status": "completed",
+      "duration_ms": 0.03,
+      "signals_found": 1,
+      "summary": "BehaviorAgent evaluated transaction profile: 2 txns, \u20b91,612.39 spend, 0 burst sync events, max txn \u20b91,450.00 (LOW risk)."
+    },
+    {
+      "agent_name": "EvidenceAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 3,
+      "summary": "EvidenceAgent correlated 3 signals across 3 agents (Coverage: 90.0%, 0 conflict(s) detected)."
+    },
+    {
+      "agent_name": "InvestigatorAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 0,
+      "summary": "InvestigatorAgent generated 1 key findings and 1 investigative checks."
+    },
+    {
+      "agent_name": "DecisionAgent",
+      "status": "completed",
+      "duration_ms": 0.03,
+      "signals_found": 0,
+      "summary": "DecisionAgent ruled LOW_RISK (Risk: 24.8, Confidence: HIGH, Coverage: 90.0%)."
+    }
+  ],
+  "narrative_summary": "### Multi-Agent Forensic Investigation Summary for Transaction SIM_ABE96A73\n\n**Final Disposition:** LOW_RISK (Composite Risk: 24.8/100, Confidence: HIGH, Evidence Coverage: 90.0%)\n\n**Executive Reasoning:**\nLow composite risk (Score: 24.8/100) with clean behavioral baseline and no coordinated graph collusion.\n\n**Key Investigative Findings:**\n- No critical or high-severity risk signals identified across behavioral or network profiles.\n\n\n**Recommended Action:**\nNo intervention required; permit standard transaction processing."
+}

@@ -1,0 +1,231 @@
+{
+  "investigation_id": "INV_CUSTOMER_CUST_00803",
+  "timestamp": "2026-09-02 20:09:59",
+  "entity_type": "customer",
+  "entity_id": "CUST_00803",
+  "risk_score": 12.0,
+  "risk_level": "LOW_RISK",
+  "decision": {
+    "status": "LOW_RISK",
+    "risk_score": 12.0,
+    "confidence": "HIGH",
+    "evidence_coverage": 90.0,
+    "reasoning": "Low composite risk (Score: 12.0/100) with clean behavioral baseline and no coordinated graph collusion.",
+    "recommended_action": "No intervention required; permit standard transaction processing.",
+    "recommended_actions": [
+      "No intervention required; permit standard transaction processing.",
+      "Standard periodic monitoring; maintain normal transaction verification rules."
+    ]
+  },
+  "key_findings": [
+    "No critical or high-severity risk signals identified across behavioral or network profiles."
+  ],
+  "evidence_items": [
+    {
+      "signal": "supervised_ml_clean_baseline",
+      "source_agent": "RiskAgent",
+      "severity": "LOW",
+      "value": 0.05,
+      "importance": 0.2,
+      "description": "Supervised model assigned a low fraud probability of 5.0%.",
+      "category": "PROTECTIVE"
+    },
+    {
+      "signal": "isolated_graph_topology",
+      "source_agent": "GraphAgent",
+      "severity": "LOW",
+      "value": 0,
+      "importance": 0.2,
+      "description": "No shared hardware devices or payment instruments detected in graph topology.",
+      "category": "PROTECTIVE"
+    },
+    {
+      "signal": "kyc_verification_complete",
+      "source_agent": "BehaviorAgent",
+      "severity": "LOW",
+      "value": true,
+      "importance": 0.15,
+      "description": "Customer identity is fully verified via mandatory KYC protocols.",
+      "category": "PROTECTIVE"
+    },
+    {
+      "signal": "established_account_tenure",
+      "source_agent": "BehaviorAgent",
+      "severity": "LOW",
+      "value": 200,
+      "importance": 0.15,
+      "description": "Established account tenure of 200 days with consistent operating history.",
+      "category": "PROTECTIVE"
+    }
+  ],
+  "conflicts": [],
+  "entities_to_review": [],
+  "network_context": {
+    "network_risk_score": 5.0,
+    "ring_id": null,
+    "shared_devices_count": 0,
+    "shared_payments_count": 0
+  },
+  "behavior_context": {
+    "behavior_risk_level": "LOW",
+    "burst_count": 0,
+    "total_transactions": 10,
+    "total_spend": 12000.0
+  },
+  "evidence_graph": {
+    "nodes": [
+      {
+        "id": "CUST_00803",
+        "label": "CUST_00803",
+        "type": "customer",
+        "subtext": "Target Customer",
+        "severity": null
+      },
+      {
+        "id": "DECISION_LOW_RISK",
+        "label": "LOW RISK",
+        "type": "decision",
+        "subtext": "Investigation Disposition",
+        "severity": null
+      },
+      {
+        "id": "SIG_0_supervised_ml_clean_baseline",
+        "label": "supervised ml clean baseline",
+        "type": "signal",
+        "subtext": "Source: RiskAgent",
+        "severity": "LOW"
+      },
+      {
+        "id": "SIG_1_isolated_graph_topology",
+        "label": "isolated graph topology",
+        "type": "signal",
+        "subtext": "Source: GraphAgent",
+        "severity": "LOW"
+      },
+      {
+        "id": "SIG_2_kyc_verification_complete",
+        "label": "kyc verification complete",
+        "type": "signal",
+        "subtext": "Source: BehaviorAgent",
+        "severity": "LOW"
+      },
+      {
+        "id": "SIG_3_established_account_tenure",
+        "label": "established account tenure",
+        "type": "signal",
+        "subtext": "Source: BehaviorAgent",
+        "severity": "LOW"
+      }
+    ],
+    "edges": [
+      {
+        "id": "e_CUST_00803_DECISION_LOW_RISK_RESULTS_IN",
+        "source": "CUST_00803",
+        "target": "DECISION_LOW_RISK",
+        "type": "RESULTS_IN",
+        "label": "RESULTS_IN"
+      },
+      {
+        "id": "e_CUST_00803_SIG_0_supervised_ml_clean_baseline_SUPPORTED_BY",
+        "source": "CUST_00803",
+        "target": "SIG_0_supervised_ml_clean_baseline",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_0_supervised_ml_clean_baseline_DECISION_LOW_RISK_CONTRIBUTES_TO",
+        "source": "SIG_0_supervised_ml_clean_baseline",
+        "target": "DECISION_LOW_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_CUST_00803_SIG_1_isolated_graph_topology_SUPPORTED_BY",
+        "source": "CUST_00803",
+        "target": "SIG_1_isolated_graph_topology",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_1_isolated_graph_topology_DECISION_LOW_RISK_CONTRIBUTES_TO",
+        "source": "SIG_1_isolated_graph_topology",
+        "target": "DECISION_LOW_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_CUST_00803_SIG_2_kyc_verification_complete_SUPPORTED_BY",
+        "source": "CUST_00803",
+        "target": "SIG_2_kyc_verification_complete",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_2_kyc_verification_complete_DECISION_LOW_RISK_CONTRIBUTES_TO",
+        "source": "SIG_2_kyc_verification_complete",
+        "target": "DECISION_LOW_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      },
+      {
+        "id": "e_CUST_00803_SIG_3_established_account_tenure_SUPPORTED_BY",
+        "source": "CUST_00803",
+        "target": "SIG_3_established_account_tenure",
+        "type": "SUPPORTED_BY",
+        "label": "SUPPORTED_BY"
+      },
+      {
+        "id": "e_SIG_3_established_account_tenure_DECISION_LOW_RISK_CONTRIBUTES_TO",
+        "source": "SIG_3_established_account_tenure",
+        "target": "DECISION_LOW_RISK",
+        "type": "CONTRIBUTES_TO",
+        "label": "CONTRIBUTES_TO"
+      }
+    ]
+  },
+  "agent_trace": [
+    {
+      "agent_name": "RiskAgent",
+      "status": "completed",
+      "duration_ms": 0.05,
+      "signals_found": 1,
+      "summary": "RiskAgent evaluated ML models: Composite Score 12.0 (LOW), Supervised Prob 5.0%, Anomaly Score 10.0."
+    },
+    {
+      "agent_name": "GraphAgent",
+      "status": "completed",
+      "duration_ms": 0.01,
+      "signals_found": 1,
+      "summary": "GraphAgent evaluated topology: Network Risk 5.0 (LOW), 0 Shared Devices, 0 Shared Cards, Ring: None."
+    },
+    {
+      "agent_name": "BehaviorAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 2,
+      "summary": "BehaviorAgent evaluated transaction profile: 10 txns, \u20b912,000.00 spend, 0 burst sync events, max txn \u20b912,000.00 (LOW risk)."
+    },
+    {
+      "agent_name": "EvidenceAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 4,
+      "summary": "EvidenceAgent correlated 4 signals across 3 agents (Coverage: 90.0%, 0 conflict(s) detected)."
+    },
+    {
+      "agent_name": "InvestigatorAgent",
+      "status": "completed",
+      "duration_ms": 0.01,
+      "signals_found": 0,
+      "summary": "InvestigatorAgent generated 1 key findings and 1 investigative checks."
+    },
+    {
+      "agent_name": "DecisionAgent",
+      "status": "completed",
+      "duration_ms": 0.02,
+      "signals_found": 0,
+      "summary": "DecisionAgent ruled LOW_RISK (Risk: 12.0, Confidence: HIGH, Coverage: 90.0%)."
+    }
+  ],
+  "narrative_summary": "### Multi-Agent Forensic Investigation Summary for Customer CUST_00803\n\n**Final Disposition:** LOW_RISK (Composite Risk: 12.0/100, Confidence: HIGH, Evidence Coverage: 90.0%)\n\n**Executive Reasoning:**\nLow composite risk (Score: 12.0/100) with clean behavioral baseline and no coordinated graph collusion.\n\n**Key Investigative Findings:**\n- No critical or high-severity risk signals identified across behavioral or network profiles.\n\n\n**Recommended Action:**\nNo intervention required; permit standard transaction processing."
+}
