@@ -1,0 +1,410 @@
+{
+  "baseline_features": [
+    {
+      "feature": "customer_merchant_count",
+      "importance": 0.20296799539541321,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "amount",
+      "importance": 0.1291969815430297,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "amount_log",
+      "importance": 0.12318679942239893,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_velocity_per_day",
+      "importance": 0.11140958957797481,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_txn_count",
+      "importance": 0.10514703229137287,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "amount_deviation_ratio",
+      "importance": 0.09609377773636503,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_avg_amount",
+      "importance": 0.04908081377946311,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_amount_std",
+      "importance": 0.035334302423504695,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "hour_of_day",
+      "importance": 0.034589445108864386,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "account_age_days",
+      "importance": 0.018002650694082075,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_payment_method_count",
+      "importance": 0.01751817977342415,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "ip_is_proxy",
+      "importance": 0.014237596322160229,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_age",
+      "importance": 0.013603394679128286,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "time_of_day_sin",
+      "importance": 0.009745696617775338,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "day_of_week",
+      "importance": 0.008599092352343587,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "time_of_day_cos",
+      "importance": 0.007802378343907264,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "is_remote_city",
+      "importance": 0.006279874335141338,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_ip_count",
+      "importance": 0.004583088441916625,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "payment_type_UPI",
+      "importance": 0.003330131781195179,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "payment_type_CREDIT_CARD",
+      "importance": 0.00317774444856584,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "customer_device_count",
+      "importance": 0.003042554453699244,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "payment_type_DEBIT_CARD",
+      "importance": 0.0009453869533091319,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "is_weekend",
+      "importance": 0.0009342185804293595,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "payment_type_WALLET",
+      "importance": 0.0005002672216293722,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "payment_type_NET_BANKING",
+      "importance": 0.00040905194673906904,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "transaction_status_FAILED",
+      "importance": 0.00012262299036819866,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "transaction_status_SUCCESS",
+      "importance": 0.0001069550000984743,
+      "model": "baseline_random_forest"
+    },
+    {
+      "feature": "transaction_status_PENDING",
+      "importance": 5.23777857006046e-05,
+      "model": "baseline_random_forest"
+    }
+  ],
+  "fraudgraph_features": [
+    {
+      "feature": "customer_merchant_count",
+      "importance": 0.1317657897601974,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "merchant_hhi",
+      "importance": 0.11712614450841193,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "amount_log",
+      "importance": 0.10902958588581034,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "amount",
+      "importance": 0.10239906942684379,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "hetero_degree",
+      "importance": 0.07002228054041441,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "amount_deviation_ratio",
+      "importance": 0.06920718115986182,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_velocity_per_day",
+      "importance": 0.06802692427669951,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_txn_count",
+      "importance": 0.059734101143920866,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "weighted_degree",
+      "importance": 0.03320186622938573,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "degree",
+      "importance": 0.028162918179869708,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_avg_amount",
+      "importance": 0.02701901594513301,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_amount_std",
+      "importance": 0.01943422324323321,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "shared_payment_count",
+      "importance": 0.01724505328272102,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "pagerank",
+      "importance": 0.016030079503509993,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "hour_of_day",
+      "importance": 0.015505401324612618,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "shared_ip_count",
+      "importance": 0.011488792385722726,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "clustering_coefficient",
+      "importance": 0.010612257077451615,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "geographic_spread",
+      "importance": 0.008739254851213966,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "shared_device_count",
+      "importance": 0.008679990265793058,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "account_age_days",
+      "importance": 0.00864599644088773,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "betweenness_centrality",
+      "importance": 0.007010040067585273,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "temporal_sync_score",
+      "importance": 0.006859433247046046,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "shared_proxy_count",
+      "importance": 0.006795116300703294,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "time_of_day_sin",
+      "importance": 0.006317306965583429,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_age",
+      "importance": 0.005176631037192621,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "network_risk_score",
+      "importance": 0.0048025700521203574,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "is_remote_city",
+      "importance": 0.004788539874023373,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_payment_method_count",
+      "importance": 0.004555457579471524,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "day_of_week",
+      "importance": 0.004302935567139532,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "time_of_day_cos",
+      "importance": 0.00401661737230775,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "payment_type_CREDIT_CARD",
+      "importance": 0.0026075534769444807,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "co_transaction_count",
+      "importance": 0.0022161100702202813,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_ip_count",
+      "importance": 0.0022071371891799626,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "payment_type_UPI",
+      "importance": 0.0016981715381835284,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "ip_is_proxy",
+      "importance": 0.0013998434025883483,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "payment_type_NET_BANKING",
+      "importance": 0.0009611863648890066,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "customer_device_count",
+      "importance": 0.0007073218145242051,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "payment_type_DEBIT_CARD",
+      "importance": 0.000552400689906137,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "is_in_flagged_ring",
+      "importance": 0.0004999786482413321,
+      "category": "graph_relational",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "is_weekend",
+      "importance": 0.0002814673430316509,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "payment_type_WALLET",
+      "importance": 0.00011420745913094328,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "transaction_status_SUCCESS",
+      "importance": 2.9315549417550734e-05,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "transaction_status_FAILED",
+      "importance": 2.4732958875022443e-05,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    },
+    {
+      "feature": "transaction_status_PENDING",
+      "importance": 2.4561542284041893e-17,
+      "category": "transaction_behavioral",
+      "model": "fraudgraph_random_forest"
+    }
+  ]
+}

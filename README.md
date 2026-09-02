@@ -41,7 +41,7 @@ FraudGraph enables risk teams to detect emerging fraud rings in real-time, expla
 
 - **Data Engineering & Analysis**: Python 3.12, Pandas, NumPy, Faker
 - **Graph Modeling & Ring Analysis**: NetworkX 3.6+, Louvain Modularity Community Detection, Multi-Signal Risk Scoring
-- **Machine Learning & Anomaly Detection**: Unsupervised & Graph ML (Isolation Forests, Graph Embeddings / GNN architectures) *(Phase 3)*
+- **Machine Learning & Risk Engine**: Scikit-Learn (RandomForest, IsolationForest, RobustScaler, OneHotEncoder), Joblib, Matplotlib
 - **Backend API Service**: FastAPI, Pydantic, Uvicorn, SQLite/PostgreSQL *(Phase 4)*
 - **Interactive UI / Forensic Dashboard**: React, Vite, Tailwind CSS, Graph Visualization (Cytoscape.js / D3.js) *(Phase 5)*
 - **Forensic Explanation & Integrations**: LLM-assisted forensic reporting and payment gateway simulation interfaces *(Phase 6)*
@@ -54,7 +54,7 @@ FraudGraph enables risk teams to detect emerging fraud rings in real-time, expla
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | **Project Foundation & Synthetic Fintech Dataset** | `COMPLETED` | Architecture, synthetic fintech dataset (2k customers, 10k transactions, 500 devices, 1k IPs, 500 PMs, 100 merchants), 7 injected fraud rings, validation engine, test suite. |
 | **Phase 2** | **Graph Construction & Fraud-Ring Detection** | `COMPLETED` | Heterogeneous graph (14.1k nodes, 90k edges), customer projection graph, graph features & centrality, Louvain community detection, multi-signal risk engine ($0-100$), export artifacts. |
-| **Phase 3** | **Machine Learning & Risk Intelligence** | `PLANNED` | Anomaly detection, graph feature engineering, multi-layer risk scoring models. |
+| **Phase 3** | **Machine Learning Risk Engine & Model Evaluation** | `COMPLETED` | Transaction/behavioral baseline, unsupervised IsolationForest anomaly detector, graph-enhanced RandomForest classifier, multi-factor composite risk scorer ($0-100$), time-aware split, threshold analysis, evaluation visualizations. |
 | **Phase 4** | **Backend API & Service Architecture** | `PLANNED` | High-performance RESTful APIs, transaction ingestion pipelines, real-time query endpoints. |
 | **Phase 5** | **Forensic Dashboard & Visualizer** | `PLANNED` | Interactive web frontend, real-time graph rendering, investigation canvas, and risk alerts. |
 | **Phase 6** | **AI Forensic Copilot & Integration** | `PLANNED` | Automated narrative investigation reports, payment simulation webhooks, end-to-end evaluation. |
@@ -90,7 +90,21 @@ This builds the heterogeneous graph, calculates graph centrality & behavioral fe
 - `data/processed/graph_nodes.csv`
 - `data/processed/graph_edges.csv`
 
-### 4. Run Automated Test Suite
+### 4. Train & Evaluate ML Risk Engine (Phase 3)
+```bash
+# Train Baseline, Anomaly Detector, and FraudGraph Models:
+python -m backend.ml.train
+
+# Evaluate on Held-Out Test Set and Generate Visual Charts:
+python -m backend.ml.evaluate
+```
+This exports:
+- `backend/ml/artifacts/*.joblib` (Trained model pipelines)
+- `data/processed/model_metrics.json` (Comparative performance metrics)
+- `data/processed/feature_importance.json` (Feature ranking breakdown)
+- `data/processed/evaluation/` (ROC, PR curves, Confusion matrices, Feature importance chart)
+
+### 5. Run Automated Test Suite (Phases 1, 2, and 3)
 ```bash
 pytest -v
 ```

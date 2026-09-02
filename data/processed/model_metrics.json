@@ -1,0 +1,317 @@
+{
+  "test_sample_count": 1500,
+  "test_fraud_count": 87,
+  "baseline_model": {
+    "model_type": "RandomForestClassifier",
+    "features_used": "Transaction + Customer Behavioral (No Graph)",
+    "roc_auc": 0.9889,
+    "metrics_at_default_threshold_0.50": {
+      "threshold": 0.5,
+      "precision": 0.8636,
+      "recall": 0.4368,
+      "f1": 0.5802,
+      "false_positive_rate": 0.0042,
+      "confusion_matrix": {
+        "true_negatives": 1407,
+        "false_positives": 6,
+        "false_negatives": 49,
+        "true_positives": 38
+      },
+      "roc_auc": 0.9889
+    },
+    "optimal_threshold_profile": {
+      "threshold": 0.2,
+      "precision": 0.7717,
+      "recall": 0.8161,
+      "f1": 0.7933,
+      "false_positive_rate": 0.0149,
+      "confusion_matrix": {
+        "true_negatives": 1392,
+        "false_positives": 21,
+        "false_negatives": 16,
+        "true_positives": 71
+      }
+    },
+    "threshold_sweep": [
+      {
+        "threshold": 0.1,
+        "precision": 0.661,
+        "recall": 0.8966,
+        "f1": 0.761,
+        "false_positive_rate": 0.0283,
+        "confusion_matrix": {
+          "true_negatives": 1373,
+          "false_positives": 40,
+          "false_negatives": 9,
+          "true_positives": 78
+        }
+      },
+      {
+        "threshold": 0.2,
+        "precision": 0.7717,
+        "recall": 0.8161,
+        "f1": 0.7933,
+        "false_positive_rate": 0.0149,
+        "confusion_matrix": {
+          "true_negatives": 1392,
+          "false_positives": 21,
+          "false_negatives": 16,
+          "true_positives": 71
+        }
+      },
+      {
+        "threshold": 0.3,
+        "precision": 0.8082,
+        "recall": 0.6782,
+        "f1": 0.7375,
+        "false_positive_rate": 0.0099,
+        "confusion_matrix": {
+          "true_negatives": 1399,
+          "false_positives": 14,
+          "false_negatives": 28,
+          "true_positives": 59
+        }
+      },
+      {
+        "threshold": 0.4,
+        "precision": 0.8421,
+        "recall": 0.5517,
+        "f1": 0.6667,
+        "false_positive_rate": 0.0064,
+        "confusion_matrix": {
+          "true_negatives": 1404,
+          "false_positives": 9,
+          "false_negatives": 39,
+          "true_positives": 48
+        }
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.8636,
+        "recall": 0.4368,
+        "f1": 0.5802,
+        "false_positive_rate": 0.0042,
+        "confusion_matrix": {
+          "true_negatives": 1407,
+          "false_positives": 6,
+          "false_negatives": 49,
+          "true_positives": 38
+        }
+      },
+      {
+        "threshold": 0.6,
+        "precision": 0.92,
+        "recall": 0.2644,
+        "f1": 0.4107,
+        "false_positive_rate": 0.0014,
+        "confusion_matrix": {
+          "true_negatives": 1411,
+          "false_positives": 2,
+          "false_negatives": 64,
+          "true_positives": 23
+        }
+      },
+      {
+        "threshold": 0.7,
+        "precision": 0.9375,
+        "recall": 0.1724,
+        "f1": 0.2913,
+        "false_positive_rate": 0.0007,
+        "confusion_matrix": {
+          "true_negatives": 1412,
+          "false_positives": 1,
+          "false_negatives": 72,
+          "true_positives": 15
+        }
+      },
+      {
+        "threshold": 0.8,
+        "precision": 0.8889,
+        "recall": 0.092,
+        "f1": 0.1667,
+        "false_positive_rate": 0.0007,
+        "confusion_matrix": {
+          "true_negatives": 1412,
+          "false_positives": 1,
+          "false_negatives": 79,
+          "true_positives": 8
+        }
+      },
+      {
+        "threshold": 0.9,
+        "precision": 1.0,
+        "recall": 0.023,
+        "f1": 0.0449,
+        "false_positive_rate": 0.0,
+        "confusion_matrix": {
+          "true_negatives": 1413,
+          "false_positives": 0,
+          "false_negatives": 85,
+          "true_positives": 2
+        }
+      }
+    ]
+  },
+  "fraudgraph_model": {
+    "model_type": "RandomForestClassifier",
+    "features_used": "Behavioral + Graph Network Relational",
+    "roc_auc": 0.9874,
+    "metrics_at_default_threshold_0.50": {
+      "threshold": 0.5,
+      "precision": 0.8571,
+      "recall": 0.4828,
+      "f1": 0.6176,
+      "false_positive_rate": 0.005,
+      "confusion_matrix": {
+        "true_negatives": 1406,
+        "false_positives": 7,
+        "false_negatives": 45,
+        "true_positives": 42
+      },
+      "roc_auc": 0.9874
+    },
+    "optimal_threshold_profile": {
+      "threshold": 0.1,
+      "precision": 0.6931,
+      "recall": 0.8046,
+      "f1": 0.7447,
+      "false_positive_rate": 0.0219,
+      "confusion_matrix": {
+        "true_negatives": 1382,
+        "false_positives": 31,
+        "false_negatives": 17,
+        "true_positives": 70
+      }
+    },
+    "threshold_sweep": [
+      {
+        "threshold": 0.1,
+        "precision": 0.6931,
+        "recall": 0.8046,
+        "f1": 0.7447,
+        "false_positive_rate": 0.0219,
+        "confusion_matrix": {
+          "true_negatives": 1382,
+          "false_positives": 31,
+          "false_negatives": 17,
+          "true_positives": 70
+        }
+      },
+      {
+        "threshold": 0.2,
+        "precision": 0.7792,
+        "recall": 0.6897,
+        "f1": 0.7317,
+        "false_positive_rate": 0.012,
+        "confusion_matrix": {
+          "true_negatives": 1396,
+          "false_positives": 17,
+          "false_negatives": 27,
+          "true_positives": 60
+        }
+      },
+      {
+        "threshold": 0.3,
+        "precision": 0.8182,
+        "recall": 0.6207,
+        "f1": 0.7059,
+        "false_positive_rate": 0.0085,
+        "confusion_matrix": {
+          "true_negatives": 1401,
+          "false_positives": 12,
+          "false_negatives": 33,
+          "true_positives": 54
+        }
+      },
+      {
+        "threshold": 0.4,
+        "precision": 0.8305,
+        "recall": 0.5632,
+        "f1": 0.6712,
+        "false_positive_rate": 0.0071,
+        "confusion_matrix": {
+          "true_negatives": 1403,
+          "false_positives": 10,
+          "false_negatives": 38,
+          "true_positives": 49
+        }
+      },
+      {
+        "threshold": 0.5,
+        "precision": 0.8571,
+        "recall": 0.4828,
+        "f1": 0.6176,
+        "false_positive_rate": 0.005,
+        "confusion_matrix": {
+          "true_negatives": 1406,
+          "false_positives": 7,
+          "false_negatives": 45,
+          "true_positives": 42
+        }
+      },
+      {
+        "threshold": 0.6,
+        "precision": 0.9167,
+        "recall": 0.3793,
+        "f1": 0.5366,
+        "false_positive_rate": 0.0021,
+        "confusion_matrix": {
+          "true_negatives": 1410,
+          "false_positives": 3,
+          "false_negatives": 54,
+          "true_positives": 33
+        }
+      },
+      {
+        "threshold": 0.7,
+        "precision": 0.9,
+        "recall": 0.2069,
+        "f1": 0.3364,
+        "false_positive_rate": 0.0014,
+        "confusion_matrix": {
+          "true_negatives": 1411,
+          "false_positives": 2,
+          "false_negatives": 69,
+          "true_positives": 18
+        }
+      },
+      {
+        "threshold": 0.8,
+        "precision": 0.8182,
+        "recall": 0.1034,
+        "f1": 0.1837,
+        "false_positive_rate": 0.0014,
+        "confusion_matrix": {
+          "true_negatives": 1411,
+          "false_positives": 2,
+          "false_negatives": 78,
+          "true_positives": 9
+        }
+      },
+      {
+        "threshold": 0.9,
+        "precision": 0.8,
+        "recall": 0.046,
+        "f1": 0.087,
+        "false_positive_rate": 0.0007,
+        "confusion_matrix": {
+          "true_negatives": 1412,
+          "false_positives": 1,
+          "false_negatives": 83,
+          "true_positives": 4
+        }
+      }
+    ]
+  },
+  "anomaly_detector": {
+    "model_type": "IsolationForest",
+    "mean_anomaly_score": 35.16,
+    "max_anomaly_score": 100.0
+  },
+  "composite_risk_distribution": {
+    "LOW": 1170,
+    "MEDIUM": 279,
+    "HIGH": 40,
+    "CRITICAL": 11
+  }
+}
