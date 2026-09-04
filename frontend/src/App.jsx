@@ -14,11 +14,11 @@ import SimulationPage from './pages/SimulationPage';
 export function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#0B0F19] text-slate-100 flex flex-col">
+      <div className="min-h-screen bg-[#080B11] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-200">
         <Navbar />
-        <div className="flex flex-1">
+        <div className="flex flex-1 overflow-hidden">
           <Sidebar />
-          <main className="flex-1 p-6 max-w-7xl mx-auto w-full overflow-y-auto">
+          <main className="flex-1 p-5 md:p-6 w-full max-w-[1600px] mx-auto overflow-y-auto">
             <Routes>
               <Route path="/" element={<DashboardPage />} />
               <Route path="/customers" element={<CustomersPage />} />

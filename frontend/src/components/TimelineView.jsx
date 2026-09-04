@@ -5,40 +5,46 @@ import { Link } from 'react-router-dom';
 export function TimelineView({ timeline = [] }) {
   if (!timeline || timeline.length === 0) {
     return (
-      <div className="glass-panel p-6 text-center text-xs text-slate-400 italic">
-        No transactional timeline recorded for this entity.
+      <div className="soc-panel p-6 text-center text-xs text-slate-400 font-mono italic">
+        No transactional timeline events recorded for this entity.
       </div>
     );
   }
 
   return (
-    <div className="glass-panel p-5 space-y-4">
-      <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+    <div className="soc-panel p-4 space-y-4">
+      <div className="flex items-center justify-between pb-2.5 border-b border-soc-border">
         <div className="flex items-center gap-2">
-          <Clock className="text-cyan-400" size={18} />
-          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200">
-            Chronological Transaction Forensics
+          <Clock className="text-cyan-400" size={16} />
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200 font-mono">
+            CHRONOLOGICAL TRANSACTION AUDIT FEED
           </h3>
         </div>
-        <span className="text-xs text-slate-400 font-mono">
-          {timeline.length} Total Events
+        <span className="text-[11px] text-slate-400 font-mono">
+          {timeline.length} Recorded Events
         </span>
       </div>
 
-      <div className="relative border-l-2 border-slate-800 ml-3.5 space-y-4 pl-6 py-2">
+      <div className="relative border-l border-soc-border ml-3 space-y-3.5 pl-5 py-1">
         {timeline.map((event, idx) => {
           const isBurst = event.is_burst;
           return (
             <div key={idx} className="relative group">
-              {/* Timeline Node Dot */}
+              {/* Node Dot */}
               <div
-                className={`absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-[#0B0F19] ${
-                  isBurst ? 'bg-red-500 shadow-md shadow-red-500/50' : 'bg-cyan-500'
+                className={`absolute -left-[25px] top-2 w-2.5 h-2.5 rounded-full border-2 border-[#090D16] ${
+                  isBurst ? 'bg-red-500 shadow-sm shadow-red-500/50' : 'bg-cyan-500'
                 }`}
               />
 
               {/* Event Card */}
-              <div className="p-3.5 bg-slate-900/80 border border-slate-800 rounded-xl hover:border-slate-700 transition-colors space-y-2">
+              <div
+                className={`p-3 rounded border transition-colors space-y-2 ${
+                  isBurst
+                    ? 'bg-red-950/10 border-red-500/30 hover:border-red-500/50'
+                    : 'bg-soc-surface border-soc-border hover:border-slate-700'
+                }`}
+              >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <Link
@@ -47,12 +53,13 @@ export function TimelineView({ timeline = [] }) {
                     >
                       {event.transaction_id}
                     </Link>
-                    <span className="text-xs font-mono text-slate-400">{event.timestamp}</span>
+                    <span className="text-[11px] font-mono text-slate-400">{event.timestamp}</span>
                   </div>
+
                   <div className="flex items-center gap-2">
                     {isBurst && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded bg-red-500/15 text-red-400 border border-red-500/30 font-mono">
-                        <Zap size={12} /> BURST SYNC ({Math.round(event.seconds_since_previous || 0)}s)
+                      <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded bg-red-500/15 text-red-400 border border-red-500/30 font-mono">
+                        <Zap size={11} /> BURST SYNC ({Math.round(event.seconds_since_previous || 0)}s)
                       </span>
                     )}
                     <span className="text-sm font-bold font-mono text-slate-100">
@@ -61,23 +68,23 @@ export function TimelineView({ timeline = [] }) {
                   </div>
                 </div>
 
-                {/* Meta details */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-800/60 text-[11px] text-slate-400 font-mono">
-                  <div className="flex items-center gap-1.5">
-                    <Store size={13} className="text-pink-400" />
-                    <span>{event.merchant_id}</span>
+                {/* Meta details grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-soc-border/70 text-[10px] text-slate-400 font-mono">
+                  <div className="flex items-center gap-1.5 truncate">
+                    <Store size={12} className="text-pink-400 flex-shrink-0" />
+                    <span className="truncate">{event.merchant_id}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <CreditCard size={13} className="text-amber-400" />
-                    <span>{event.payment_type}</span>
+                  <div className="flex items-center gap-1.5 truncate">
+                    <CreditCard size={12} className="text-amber-400 flex-shrink-0" />
+                    <span className="truncate">{event.payment_type}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <Smartphone size={13} className="text-blue-400" />
-                    <span>{event.device_id}</span>
+                  <div className="flex items-center gap-1.5 truncate">
+                    <Smartphone size={12} className="text-blue-400 flex-shrink-0" />
+                    <span className="truncate">{event.device_id}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <Globe size={13} className="text-purple-400" />
-                    <span>{event.ip_id} ({event.city})</span>
+                  <div className="flex items-center gap-1.5 truncate">
+                    <Globe size={12} className="text-purple-400 flex-shrink-0" />
+                    <span className="truncate">{event.ip_id} ({event.city})</span>
                   </div>
                 </div>
               </div>

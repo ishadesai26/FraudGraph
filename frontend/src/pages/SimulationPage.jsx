@@ -75,57 +75,57 @@ export function SimulationPage() {
   };
 
   return (
-    <div className="space-y-6 pb-16">
+    <div className="space-y-4 pb-16">
       {/* Header Banner */}
-      <div className="glass-panel p-6 relative overflow-hidden bg-gradient-to-r from-slate-900 via-slate-900 to-amber-950/30 border-amber-500/30">
-        <div className="space-y-2">
+      <div className="soc-panel p-5 relative overflow-hidden bg-gradient-to-r from-[#0D131F] via-[#0D131F] to-[#1E1710] border-soc-border">
+        <div className="space-y-1.5">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-            <span className="text-[11px] font-bold text-amber-400 uppercase tracking-widest font-mono">
-              Live Real-Time Risk Simulation
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-soc-pulse"></span>
+            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest font-mono">
+              LIVE GATEWAY INGRESS SIMULATOR
             </span>
           </div>
-          <h1 className="text-2xl font-extrabold text-slate-100 flex items-center gap-2.5">
-            <Zap className="text-amber-400" size={26} />
-            Real-Time Transaction Risk Simulator
+          <h1 className="text-xl md:text-2xl font-extrabold text-slate-100 flex items-center gap-2.5 font-mono">
+            <Zap className="text-amber-400" size={24} />
+            REAL-TIME TRANSACTION RISK SIMULATOR
           </h1>
-          <p className="text-xs text-slate-400 max-w-3xl">
-            Simulate incoming live transactions through the live feature extraction, machine-learning inference models, and collaborative 6-agent forensic investigation pipeline in real-time.
+          <p className="text-xs text-slate-400 font-sans leading-relaxed max-w-3xl">
+            Simulate incoming live transactions through the live feature extraction pipeline, Random Forest inference models, and collaborative 6-agent forensic investigation swarm in real time.
           </p>
         </div>
       </div>
 
       {/* Scenario Selection Grid */}
-      <div className="space-y-3">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-300">
-          Select Fraud Simulation Scenario
+      <div className="space-y-2.5">
+        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono">
+          1. SELECT CONTROLLED SIMULATION SCENARIO
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
           {scenarios.map((sc) => {
             const isSelected = selectedScenario === sc.scenario_id;
             return (
               <div
                 key={sc.scenario_id}
                 onClick={() => handleScenarioSelect(sc)}
-                className={`p-4 rounded-xl border cursor-pointer transition-all flex flex-col justify-between ${
+                className={`p-3.5 rounded border cursor-pointer transition-all flex flex-col justify-between ${
                   isSelected
-                    ? 'bg-amber-500/10 border-amber-500/60 shadow-lg shadow-amber-500/10'
-                    : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+                    ? 'bg-amber-500/10 border-amber-500/60 shadow-sm'
+                    : 'bg-soc-surface border-soc-border hover:border-slate-700'
                 }`}
               >
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold uppercase text-amber-400">
+                    <span className="text-[9px] font-mono font-bold uppercase text-amber-400">
                       {sc.scenario_id}
                     </span>
                     <RiskBadge level={sc.expected_risk_tier} size="sm" />
                   </div>
                   <h4 className="text-xs font-bold text-slate-100">{sc.title}</h4>
-                  <p className="text-[11px] text-slate-400 leading-relaxed">{sc.description}</p>
+                  <p className="text-[11px] text-slate-400 font-sans leading-relaxed">{sc.description}</p>
                 </div>
-                <div className="pt-3 mt-2 border-t border-slate-800/60 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                <div className="pt-2 mt-2 border-t border-soc-border/60 flex items-center justify-between text-[10px] font-mono text-slate-400">
                   <span>₹{sc.sample_payload.amount.toLocaleString()}</span>
-                  <span>{sc.sample_payload.customer_id}</span>
+                  <span className="text-cyan-400">{sc.sample_payload.customer_id}</span>
                 </div>
               </div>
             );
@@ -134,40 +134,40 @@ export function SimulationPage() {
       </div>
 
       {/* Payload Editor & Execution Trigger */}
-      <div className="glass-panel p-5 space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
-            Simulated Transaction Ingress Payload
+      <div className="soc-panel p-4 space-y-3">
+        <div className="flex items-center justify-between pb-2 border-b border-soc-border font-mono text-xs">
+          <h4 className="font-bold uppercase tracking-wider text-slate-200">
+            2. INGRESS TRANSACTION PAYLOAD PARAMETERS
           </h4>
-          <span className="text-[11px] text-slate-400 font-mono">Live Gateway Payload</span>
+          <span className="text-[10px] text-slate-400">Gateway Payload Inspector</span>
         </div>
 
-        {/* Form Inputs Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+        {/* Inputs Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs font-mono">
           <div>
-            <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Customer ID</label>
+            <label className="block text-[9px] uppercase font-bold text-slate-400 mb-1">Customer ID</label>
             <input
               type="text"
               value={transactionPayload.customer_id}
               onChange={(e) => setTransactionPayload({ ...transactionPayload, customer_id: e.target.value })}
-              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 font-mono text-slate-100 focus:outline-none focus:border-amber-500"
+              className="w-full bg-soc-surface border border-soc-border rounded px-2.5 py-1.5 text-slate-100 focus:outline-none focus:border-amber-500"
             />
           </div>
           <div>
-            <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Amount (₹)</label>
+            <label className="block text-[9px] uppercase font-bold text-slate-400 mb-1">Amount (₹)</label>
             <input
               type="number"
               value={transactionPayload.amount}
               onChange={(e) => setTransactionPayload({ ...transactionPayload, amount: parseFloat(e.target.value) || 0 })}
-              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 font-mono text-slate-100 focus:outline-none focus:border-amber-500"
+              className="w-full bg-soc-surface border border-soc-border rounded px-2.5 py-1.5 text-slate-100 focus:outline-none focus:border-amber-500"
             />
           </div>
           <div>
-            <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Payment Type</label>
+            <label className="block text-[9px] uppercase font-bold text-slate-400 mb-1">Payment Type</label>
             <select
               value={transactionPayload.payment_type}
               onChange={(e) => setTransactionPayload({ ...transactionPayload, payment_type: e.target.value })}
-              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 font-mono text-slate-100 focus:outline-none focus:border-amber-500"
+              className="w-full bg-soc-surface border border-soc-border rounded px-2.5 py-1.5 text-slate-100 focus:outline-none focus:border-amber-500"
             >
               <option value="UPI">UPI</option>
               <option value="CREDIT_CARD">CREDIT_CARD</option>
@@ -176,32 +176,32 @@ export function SimulationPage() {
             </select>
           </div>
           <div>
-            <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Velocity Interval (s)</label>
+            <label className="block text-[9px] uppercase font-bold text-slate-400 mb-1">Velocity Delta (s)</label>
             <input
               type="number"
               value={transactionPayload.seconds_since_previous || 0}
               onChange={(e) => setTransactionPayload({ ...transactionPayload, seconds_since_previous: parseInt(e.target.value, 10) || 0 })}
-              className="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 font-mono text-slate-100 focus:outline-none focus:border-amber-500"
+              className="w-full bg-soc-surface border border-soc-border rounded px-2.5 py-1.5 text-slate-100 focus:outline-none focus:border-amber-500"
             />
           </div>
         </div>
 
-        {/* Action Trigger Button */}
+        {/* Trigger Button */}
         <div className="pt-2 flex justify-end">
           <button
             onClick={handleSimulate}
             disabled={loading}
-            className="px-6 py-2.5 text-xs font-bold rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-lg shadow-amber-500/25 transition-all flex items-center gap-2 disabled:opacity-50"
+            className="px-5 py-2 text-xs font-mono font-bold rounded bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-sm transition-all flex items-center gap-2 disabled:opacity-50"
           >
             {loading ? (
               <>
-                <div className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></div>
-                <span>Executing Live Pipeline & Agents...</span>
+                <div className="w-3.5 h-3.5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></div>
+                <span>Executing Pipeline & Agents...</span>
               </>
             ) : (
               <>
-                <Play size={15} className="fill-current" />
-                <span>Simulate & Investigate Transaction</span>
+                <Play size={14} className="fill-current" />
+                <span>Simulate & Score Transaction</span>
               </>
             )}
           </button>
@@ -209,21 +209,21 @@ export function SimulationPage() {
       </div>
 
       {error && (
-        <div className="glass-panel p-6 border-red-500/30 bg-red-950/20 text-center space-y-2">
-          <AlertTriangle className="mx-auto text-red-400" size={28} />
-          <h4 className="text-xs font-bold text-red-300">Simulation Execution Failed</h4>
-          <p className="text-xs text-slate-400">{error}</p>
+        <div className="soc-panel p-5 border-red-500/30 bg-red-950/20 text-center space-y-1.5">
+          <AlertTriangle className="mx-auto text-red-400" size={26} />
+          <h4 className="text-xs font-bold text-red-300 font-mono">Simulation Execution Failed</h4>
+          <p className="text-xs text-slate-400 font-mono">{error}</p>
         </div>
       )}
 
-      {/* Simulation Response & Live Multi-Agent Verdict */}
+      {/* Simulation Results Section */}
       {simulationResult && (
-        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-3 duration-500">
+        <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
           {/* Live Risk Breakdown Banner */}
-          <div className="glass-panel p-6 border-amber-500/30 bg-gradient-to-r from-slate-900 via-slate-900 to-amber-950/30 space-y-4">
+          <div className="soc-panel p-5 border-amber-500/30 bg-gradient-to-r from-[#0D131F] via-[#0D131F] to-[#1E1610] space-y-3.5">
             <div className="flex flex-wrap items-start justify-between gap-6">
-              <div className="space-y-2">
-                <div className="flex items-center gap-3">
+              <div className="space-y-2 max-w-3xl">
+                <div className="flex flex-wrap items-center gap-3">
                   <span className="text-xs font-mono uppercase font-bold text-slate-400">Simulation Disposition:</span>
                   <RiskBadge level={simulationResult.decision.status} size="md" />
                   <span className="text-xs font-mono text-slate-400">
@@ -237,7 +237,7 @@ export function SimulationPage() {
                 <h3 className="text-2xl font-bold font-mono text-slate-100">
                   ₹{transactionPayload.amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                 </h3>
-                <p className="text-xs text-slate-300 leading-relaxed max-w-3xl">
+                <p className="text-xs text-slate-300 font-sans leading-relaxed">
                   {simulationResult.decision.reasoning}
                 </p>
               </div>
@@ -246,61 +246,61 @@ export function SimulationPage() {
             </div>
 
             {/* Model Scoring Signals Matrix */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-slate-800 font-mono text-xs">
-              <div className="p-2.5 bg-slate-900/90 rounded-lg border border-slate-800">
-                <span className="text-[10px] text-slate-400 uppercase font-sans font-bold">Composite Risk</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2.5 border-t border-soc-border font-mono text-xs">
+              <div className="p-2.5 bg-soc-panel rounded border border-soc-border">
+                <span className="text-[9px] text-slate-400 uppercase font-bold">Composite Score</span>
                 <div className="text-base font-bold text-slate-100 mt-0.5">{simulationResult.risk.composite_risk_score} / 100</div>
               </div>
-              <div className="p-2.5 bg-slate-900/90 rounded-lg border border-slate-800">
-                <span className="text-[10px] text-slate-400 uppercase font-sans font-bold">Supervised ML Prob</span>
+              <div className="p-2.5 bg-soc-panel rounded border border-soc-border">
+                <span className="text-[9px] text-slate-400 uppercase font-bold">Supervised ML</span>
                 <div className="text-base font-bold text-cyan-400 mt-0.5">{(simulationResult.risk.supervised_ml_probability * 100).toFixed(1)}%</div>
               </div>
-              <div className="p-2.5 bg-slate-900/90 rounded-lg border border-slate-800">
-                <span className="text-[10px] text-slate-400 uppercase font-sans font-bold">Anomaly Score</span>
+              <div className="p-2.5 bg-soc-panel rounded border border-soc-border">
+                <span className="text-[9px] text-slate-400 uppercase font-bold">Anomaly Score</span>
                 <div className="text-base font-bold text-amber-400 mt-0.5">{simulationResult.risk.unsupervised_anomaly_score} / 100</div>
               </div>
-              <div className="p-2.5 bg-slate-900/90 rounded-lg border border-slate-800">
-                <span className="text-[10px] text-slate-400 uppercase font-sans font-bold">Network Risk</span>
+              <div className="p-2.5 bg-soc-panel rounded border border-soc-border">
+                <span className="text-[9px] text-slate-400 uppercase font-bold">Network Risk</span>
                 <div className="text-base font-bold text-purple-400 mt-0.5">{simulationResult.risk.network_risk_score} / 100</div>
               </div>
             </div>
           </div>
 
           {/* 6-Agent Execution Pipeline Trace */}
-          <div className="glass-panel p-5 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 flex items-center gap-1.5">
-              <Bot size={15} className="text-amber-400" />
-              Collaborative 6-Agent Live Investigation Trace
+          <div className="soc-panel p-4 space-y-2.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 flex items-center gap-1.5 font-mono">
+              <Bot size={14} className="text-amber-400" />
+              COLLABORATIVE 6-AGENT SIMULATION TRACE
             </h4>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-1">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-1">
               {simulationResult.agent_trace.map((step) => (
-                <div key={step.agent_name} className="p-3 bg-slate-900/90 border border-slate-800 rounded-xl space-y-1 text-xs">
-                  <div className="flex justify-between items-center text-[10px] text-slate-400 font-mono">
+                <div key={step.agent_name} className="p-2.5 bg-soc-surface border border-soc-border rounded space-y-1 text-xs font-mono">
+                  <div className="flex justify-between items-center text-[9px] text-slate-400">
                     <span>{step.agent_name}</span>
                     <span className="text-emerald-400 font-bold">✓ {step.duration_ms}ms</span>
                   </div>
-                  <div className="text-[11px] font-bold text-slate-200">{step.signals_found} Signals Found</div>
+                  <div className="text-[11px] font-bold text-slate-200">{step.signals_found} Signals</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Evidence Package Discovered */}
-          <div className="glass-panel p-5 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
-              Corroborated Multi-Agent Evidence Package
+          <div className="soc-panel p-4 space-y-2.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 font-mono">
+              CORROBORATED MULTI-AGENT EVIDENCE PACKAGE
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
               {simulationResult.investigation.evidence_items.map((ev, idx) => (
-                <div key={idx} className="p-3.5 bg-slate-900/80 border border-slate-800 rounded-xl space-y-1.5 text-xs">
+                <div key={idx} className="p-3 bg-soc-surface border border-soc-border rounded space-y-1 text-xs">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                    <span className="text-[9px] font-bold font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">
                       {ev.source_agent}
                     </span>
                     <RiskBadge level={ev.severity} size="sm" />
                   </div>
                   <div className="font-mono font-bold text-slate-200">{ev.signal.replace(/_/g, ' ')}</div>
-                  <p className="text-slate-400 text-[11px] leading-relaxed">{ev.description}</p>
+                  <p className="text-slate-400 text-[11px] font-sans leading-relaxed">{ev.description}</p>
                 </div>
               ))}
             </div>
